@@ -1,0 +1,146 @@
+/**
+ */
+package qcm;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Question</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link qcm.Question#getIntitule <em>Intitule</em>}</li>
+ *   <li>{@link qcm.Question#isReponseUnique <em>Reponse Unique</em>}</li>
+ *   <li>{@link qcm.Question#getDifficulte <em>Difficulte</em>}</li>
+ *   <li>{@link qcm.Question#getQuestionSuivante <em>Question Suivante</em>}</li>
+ *   <li>{@link qcm.Question#getReponses <em>Reponses</em>}</li>
+ *   <li>{@link qcm.Question#getEtiquette <em>Etiquette</em>}</li>
+ * </ul>
+ *
+ * @see qcm.QcmPackage#getQuestion()
+ * @model
+ * @generated
+ */
+public interface Question extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Intitule</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intitule</em>' attribute.
+	 * @see #setIntitule(String)
+	 * @see qcm.QcmPackage#getQuestion_Intitule()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getIntitule();
+
+	/**
+	 * Sets the value of the '{@link qcm.Question#getIntitule <em>Intitule</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Intitule</em>' attribute.
+	 * @see #getIntitule()
+	 * @generated
+	 */
+	void setIntitule(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Reponse Unique</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reponse Unique</em>' attribute.
+	 * @see #setReponseUnique(boolean)
+	 * @see qcm.QcmPackage#getQuestion_ReponseUnique()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isReponseUnique();
+
+	/**
+	 * Sets the value of the '{@link qcm.Question#isReponseUnique <em>Reponse Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reponse Unique</em>' attribute.
+	 * @see #isReponseUnique()
+	 * @generated
+	 */
+	void setReponseUnique(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Difficulte</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Difficulte</em>' attribute.
+	 * @see #setDifficulte(long)
+	 * @see qcm.QcmPackage#getQuestion_Difficulte()
+	 * @model required="true"
+	 * @generated
+	 */
+	long getDifficulte();
+
+	/**
+	 * Sets the value of the '{@link qcm.Question#getDifficulte <em>Difficulte</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Difficulte</em>' attribute.
+	 * @see #getDifficulte()
+	 * @generated
+	 */
+	void setDifficulte(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Question Suivante</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Question Suivante</em>' reference.
+	 * @see #setQuestionSuivante(Question)
+	 * @see qcm.QcmPackage#getQuestion_QuestionSuivante()
+	 * @model
+	 * @generated
+	 */
+	Question getQuestionSuivante();
+
+	/**
+	 * Sets the value of the '{@link qcm.Question#getQuestionSuivante <em>Question Suivante</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Question Suivante</em>' reference.
+	 * @see #getQuestionSuivante()
+	 * @generated
+	 */
+	void setQuestionSuivante(Question value);
+
+	/**
+	 * Returns the value of the '<em><b>Reponses</b></em>' reference list.
+	 * The list contents are of type {@link qcm.Reponse}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reponses</em>' reference list.
+	 * @see qcm.QcmPackage#getQuestion_Reponses()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<Reponse> getReponses();
+
+	/**
+	 * Returns the value of the '<em><b>Etiquette</b></em>' reference list.
+	 * The list contents are of type {@link qcm.Etiquette}.
+	 * It is bidirectional and its opposite is '{@link qcm.Etiquette#getQuestions <em>Questions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Etiquette</em>' reference list.
+	 * @see qcm.QcmPackage#getQuestion_Etiquette()
+	 * @see qcm.Etiquette#getQuestions
+	 * @model opposite="questions"
+	 * @generated
+	 */
+	EList<Etiquette> getEtiquette();
+
+} // Question

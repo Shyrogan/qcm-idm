@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/qcm/src-gen" creationIcons="false" editDirectory="/qcm.edit/src-gen"
+    editorDirectory="/qcm.editor/src-gen" modelPluginID="qcm" modelName="Qcm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>qcm.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Qcm" disposableProviderFactory="true" ecorePackage="qcm.ecore#/">
+    <genClasses ecoreClass="qcm.ecore#//Questionnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Questionnaire/titre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Questionnaire/retourArriere"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Questionnaire/melange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Questionnaire/nbQuestion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qcm.ecore#//Questionnaire/possede"/>
+    </genClasses>
+    <genClasses ecoreClass="qcm.ecore#//Question">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Question/intitule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Question/reponseUnique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Question/difficulte"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Question/questionSuivante"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Question/reponses"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Question/etiquette"/>
+    </genClasses>
+    <genClasses ecoreClass="qcm.ecore#//Reponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Reponse/intitule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Reponse/valide"/>
+    </genClasses>
+    <genClasses ecoreClass="qcm.ecore#//Etiquette">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Etiquette/categorie"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Etiquette/questions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Etiquette/sousEtiquette"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
