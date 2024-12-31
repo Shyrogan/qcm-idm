@@ -7,14 +7,14 @@ Questionnaire {
       intitule "Ma question numéro 1"    
       difficulte 1    
       reponses {
-      	Reponse {
-	        intitule "Adada"
-	    }
+          Reponse {
+            intitule "Adada"
+        }
       }
       etiquette {
-      	Etiquette {
-      		categorie "Zaza"
-      	}
+          Etiquette {
+              categorie "Zaza"
+          }
       }
     }  
   } 
