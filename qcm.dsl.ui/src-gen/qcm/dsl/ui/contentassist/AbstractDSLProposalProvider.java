@@ -82,7 +82,4 @@ public abstract class AbstractDSLProposalProvider extends TerminalsProposalProvi
 	public void complete_Etiquette(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_String0(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
 }

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'melange'", "'Questionnaire'", "'{'", "'titre'", "'retourArriere'", "'possede'", "','", "'}'", "'true'", "'false'", "'reponseUnique'", "'Question'", "'intitule'", "'difficulte'", "'questionSuivante'", "'reponses'", "'etiquette'", "'-'", "'valide'", "'Reponse'", "'Etiquette'", "'categorie'", "'sousEtiquette'", "'String'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'melange'", "'Questionnaire'", "'{'", "'titre'", "'retourArriere'", "'possede'", "','", "'}'", "'true'", "'false'", "'reponseUnique'", "'Question'", "'intitule'", "'difficulte'", "'questionSuivante'", "'reponses'", "'etiquette'", "'-'", "'valide'", "'Reponse'", "'Etiquette'", "'categorie'", "'sousEtiquette'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -33,7 +33,6 @@ public class InternalDSLParser extends AbstractInternalAntlrParser {
     public static final int T__11=11;
     public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
@@ -1426,7 +1425,7 @@ public class InternalDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEtiquette"
-    // InternalDSL.g:612:1: ruleEtiquette returns [EObject current=null] : (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleString0 ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' ) ;
+    // InternalDSL.g:612:1: ruleEtiquette returns [EObject current=null] : (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleEString ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' ) ;
     public final EObject ruleEtiquette() throws RecognitionException {
         EObject current = null;
 
@@ -1442,11 +1441,11 @@ public class InternalDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDSL.g:618:2: ( (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleString0 ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' ) )
-            // InternalDSL.g:619:2: (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleString0 ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' )
+            // InternalDSL.g:618:2: ( (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleEString ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' ) )
+            // InternalDSL.g:619:2: (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleEString ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' )
             {
-            // InternalDSL.g:619:2: (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleString0 ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' )
-            // InternalDSL.g:620:3: otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleString0 ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}'
+            // InternalDSL.g:619:2: (otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleEString ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}' )
+            // InternalDSL.g:620:3: otherlv_0= 'Etiquette' otherlv_1= '{' otherlv_2= 'categorie' ( (lv_categorie_3_0= ruleEString ) ) (otherlv_4= 'sousEtiquette' ( ( ruleEString ) ) )? otherlv_6= '}'
             {
             otherlv_0=(Token)match(input,31,FOLLOW_4); 
 
@@ -1456,21 +1455,21 @@ public class InternalDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getEtiquetteAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,32,FOLLOW_25); 
+            otherlv_2=(Token)match(input,32,FOLLOW_6); 
 
             			newLeafNode(otherlv_2, grammarAccess.getEtiquetteAccess().getCategorieKeyword_2());
             		
-            // InternalDSL.g:632:3: ( (lv_categorie_3_0= ruleString0 ) )
-            // InternalDSL.g:633:4: (lv_categorie_3_0= ruleString0 )
+            // InternalDSL.g:632:3: ( (lv_categorie_3_0= ruleEString ) )
+            // InternalDSL.g:633:4: (lv_categorie_3_0= ruleEString )
             {
-            // InternalDSL.g:633:4: (lv_categorie_3_0= ruleString0 )
-            // InternalDSL.g:634:5: lv_categorie_3_0= ruleString0
+            // InternalDSL.g:633:4: (lv_categorie_3_0= ruleEString )
+            // InternalDSL.g:634:5: lv_categorie_3_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getEtiquetteAccess().getCategorieString0ParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getEtiquetteAccess().getCategorieEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_26);
-            lv_categorie_3_0=ruleString0();
+            pushFollow(FOLLOW_25);
+            lv_categorie_3_0=ruleEString();
 
             state._fsp--;
 
@@ -1482,7 +1481,7 @@ public class InternalDSLParser extends AbstractInternalAntlrParser {
             						current,
             						"categorie",
             						lv_categorie_3_0,
-            						"qcm.dsl.DSL.String0");
+            						"qcm.dsl.DSL.EString");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1565,80 +1564,6 @@ public class InternalDSLParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleEtiquette"
 
-
-    // $ANTLR start "entryRuleString0"
-    // InternalDSL.g:681:1: entryRuleString0 returns [String current=null] : iv_ruleString0= ruleString0 EOF ;
-    public final String entryRuleString0() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleString0 = null;
-
-
-        try {
-            // InternalDSL.g:681:47: (iv_ruleString0= ruleString0 EOF )
-            // InternalDSL.g:682:2: iv_ruleString0= ruleString0 EOF
-            {
-             newCompositeNode(grammarAccess.getString0Rule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleString0=ruleString0();
-
-            state._fsp--;
-
-             current =iv_ruleString0.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleString0"
-
-
-    // $ANTLR start "ruleString0"
-    // InternalDSL.g:688:1: ruleString0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'String' ;
-    public final AntlrDatatypeRuleToken ruleString0() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalDSL.g:694:2: (kw= 'String' )
-            // InternalDSL.g:695:2: kw= 'String'
-            {
-            kw=(Token)match(input,34,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getString0Access().getStringKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleString0"
-
     // Delegated rules
 
 
@@ -1668,7 +1593,6 @@ public class InternalDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000200040000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000200040000L});
 
 }

@@ -8,8 +8,6 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import qcm.Etiquette;
 import qcm.QcmFactory;
 import qcm.QcmPackage;
@@ -99,9 +97,6 @@ public class QcmPackageImpl extends EPackageImpl implements QcmPackage {
 				: new QcmPackageImpl();
 
 		isInited = true;
-
-		// Initialize simple dependencies
-		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theQcmPackage.createPackageContents();
@@ -396,10 +391,6 @@ public class QcmPackageImpl extends EPackageImpl implements QcmPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
-				.getEPackage(XMLTypePackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -451,7 +442,7 @@ public class QcmPackageImpl extends EPackageImpl implements QcmPackage {
 
 		initEClass(etiquetteEClass, Etiquette.class, "Etiquette", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEtiquette_Categorie(), theXMLTypePackage.getString(), "categorie", "", 1, 1, Etiquette.class,
+		initEAttribute(getEtiquette_Categorie(), ecorePackage.getEString(), "categorie", "", 1, 1, Etiquette.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEtiquette_Questions(), this.getQuestion(), this.getQuestion_Etiquette(), "questions", null, 1,
 				1, Etiquette.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,

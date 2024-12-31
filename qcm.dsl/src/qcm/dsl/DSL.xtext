@@ -3,7 +3,6 @@ grammar qcm.dsl.DSL with org.eclipse.xtext.common.Terminals
 
 import "http://www.example.org/qcm" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-import "http://www.eclipse.org/emf/2003/XMLType" as type
 
 Questionnaire returns Questionnaire:
 	(melange?='melange')?
@@ -47,9 +46,6 @@ Reponse returns Reponse:
 Etiquette returns Etiquette:
 	'Etiquette'
 	'{'
-		'categorie' categorie=String0
+		'categorie' categorie=EString
 		('sousEtiquette' sousEtiquette=[Etiquette|EString])?
 	'}';
-
-String0 returns type::String:
-	'String' /* TODO: implement this rule and an appropriate IValueConverter */;

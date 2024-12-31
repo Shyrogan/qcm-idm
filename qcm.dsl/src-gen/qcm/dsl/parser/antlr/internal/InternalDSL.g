@@ -632,9 +632,9 @@ ruleEtiquette returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEtiquetteAccess().getCategorieString0ParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEtiquetteAccess().getCategorieEStringParserRuleCall_3_0());
 				}
-				lv_categorie_3_0=ruleString0
+				lv_categorie_3_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEtiquetteRule());
@@ -643,7 +643,7 @@ ruleEtiquette returns [EObject current=null]
 						$current,
 						"categorie",
 						lv_categorie_3_0,
-						"qcm.dsl.DSL.String0");
+						"qcm.dsl.DSL.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -675,28 +675,6 @@ ruleEtiquette returns [EObject current=null]
 			newLeafNode(otherlv_6, grammarAccess.getEtiquetteAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
-;
-
-// Entry rule entryRuleString0
-entryRuleString0 returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getString0Rule()); }
-	iv_ruleString0=ruleString0
-	{ $current=$iv_ruleString0.current.getText(); }
-	EOF;
-
-// Rule String0
-ruleString0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='String'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getString0Access().getStringKeyword());
-	}
 ;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

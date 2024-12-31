@@ -31,7 +31,7 @@ public interface Etiquette extends EObject {
 	 * @return the value of the '<em>Categorie</em>' attribute.
 	 * @see #setCategorie(String)
 	 * @see qcm.QcmPackage#getEtiquette_Categorie()
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+	 * @model default="" required="true"
 	 * @generated
 	 */
 	String getCategorie();

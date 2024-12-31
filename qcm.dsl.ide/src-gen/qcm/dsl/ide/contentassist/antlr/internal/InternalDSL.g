@@ -224,31 +224,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleString0
-entryRuleString0
-:
-{ before(grammarAccess.getString0Rule()); }
-	 ruleString0
-{ after(grammarAccess.getString0Rule()); } 
-	 EOF 
-;
-
-// Rule String0
-ruleString0 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getString0Access().getStringKeyword()); }
-		'String'
-		{ after(grammarAccess.getString0Access().getStringKeyword()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__EString__Alternatives
 	@init {
 		int stackSize = keepStackSize();
@@ -2104,9 +2079,9 @@ rule__Etiquette__CategorieAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getEtiquetteAccess().getCategorieString0ParserRuleCall_3_0()); }
-		ruleString0
-		{ after(grammarAccess.getEtiquetteAccess().getCategorieString0ParserRuleCall_3_0()); }
+		{ before(grammarAccess.getEtiquetteAccess().getCategorieEStringParserRuleCall_3_0()); }
+		ruleEString
+		{ after(grammarAccess.getEtiquetteAccess().getCategorieEStringParserRuleCall_3_0()); }
 	)
 ;
 finally {

@@ -412,7 +412,7 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cCategorieKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cCategorieAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCategorieString0ParserRuleCall_3_0 = (RuleCall)cCategorieAssignment_3.eContents().get(0);
+		private final RuleCall cCategorieEStringParserRuleCall_3_0 = (RuleCall)cCategorieAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cSousEtiquetteKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cSousEtiquetteAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -423,14 +423,14 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//Etiquette returns Etiquette:
 		//    'Etiquette'
 		//    '{'
-		//        'categorie' categorie=String0
+		//        'categorie' categorie=EString
 		//        ('sousEtiquette' sousEtiquette=[Etiquette|EString])?
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Etiquette'
 		//'{'
-		//    'categorie' categorie=String0
+		//    'categorie' categorie=EString
 		//    ('sousEtiquette' sousEtiquette=[Etiquette|EString])?
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -444,11 +444,11 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'categorie'
 		public Keyword getCategorieKeyword_2() { return cCategorieKeyword_2; }
 		
-		//categorie=String0
+		//categorie=EString
 		public Assignment getCategorieAssignment_3() { return cCategorieAssignment_3; }
 		
-		//String0
-		public RuleCall getCategorieString0ParserRuleCall_3_0() { return cCategorieString0ParserRuleCall_3_0; }
+		//EString
+		public RuleCall getCategorieEStringParserRuleCall_3_0() { return cCategorieEStringParserRuleCall_3_0; }
 		
 		//('sousEtiquette' sousEtiquette=[Etiquette|EString])?
 		public Group getGroup_4() { return cGroup_4; }
@@ -468,17 +468,6 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-	public class String0Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "qcm.dsl.DSL.String0");
-		private final Keyword cStringKeyword = (Keyword)rule.eContents().get(1);
-		
-		//String0 returns type::String:
-		//    'String' /* TODO: implement this rule and an appropriate IValueConverter */;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'String'
-		public Keyword getStringKeyword() { return cStringKeyword; }
-	}
 	
 	
 	private final QuestionnaireElements pQuestionnaire;
@@ -488,7 +477,6 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final ELongElements pELong;
 	private final ReponseElements pReponse;
 	private final EtiquetteElements pEtiquette;
-	private final String0Elements pString0;
 	
 	private final Grammar grammar;
 	
@@ -506,7 +494,6 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pELong = new ELongElements();
 		this.pReponse = new ReponseElements();
 		this.pEtiquette = new EtiquetteElements();
-		this.pString0 = new String0Elements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -617,7 +604,7 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//Etiquette returns Etiquette:
 	//    'Etiquette'
 	//    '{'
-	//        'categorie' categorie=String0
+	//        'categorie' categorie=EString
 	//        ('sousEtiquette' sousEtiquette=[Etiquette|EString])?
 	//    '}';
 	public EtiquetteElements getEtiquetteAccess() {
@@ -626,16 +613,6 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getEtiquetteRule() {
 		return getEtiquetteAccess().getRule();
-	}
-	
-	//String0 returns type::String:
-	//    'String' /* TODO: implement this rule and an appropriate IValueConverter */;
-	public String0Elements getString0Access() {
-		return pString0;
-	}
-	
-	public ParserRule getString0Rule() {
-		return getString0Access().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

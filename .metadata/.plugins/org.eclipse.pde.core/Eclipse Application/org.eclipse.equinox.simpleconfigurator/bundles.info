@@ -941,5 +941,6 @@ qcm,0.1.0.qualifier,file:/home/sebastien/Documents/university/semester-9/idm/Pro
 qcm.dsl,1.0.0.qualifier,file:/home/sebastien/Documents/university/semester-9/idm/Projet/qcm.dsl/,4,false
 qcm.dsl.ide,1.0.0.qualifier,file:/home/sebastien/Documents/university/semester-9/idm/Projet/qcm.dsl.ide/,4,false
 qcm.dsl.ui,1.0.0.qualifier,file:/home/sebastien/Documents/university/semester-9/idm/Projet/qcm.dsl.ui/,4,false
+qcm.m2m,0.1.0.qualifier,file:/home/sebastien/Documents/university/semester-9/idm/Projet/qcm.m2m/,4,false
 slf4j.api,2.0.16,file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/slf4j.api_2.0.16.jar,4,false
 slf4j.simple,2.0.16,file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/slf4j.simple_2.0.16.jar,4,false

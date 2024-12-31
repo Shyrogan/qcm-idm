@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="filters_last_used" value="filter_imports;"/>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
 	<section name="completion_proposal_size">
+	</section>
+	<section name="NewPackageCreationWizard.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1061"/>
+		<item key="DIALOG_Y_ORIGIN" value="590"/>
+		<item key="DIALOG_WIDTH" value="704"/>
+		<item key="DIALOG_HEIGHT" value="435"/>
+		<item key="DIALOG_FONT_NAME" value="1|DejaVu Sans|12.0|0|GTK|1|"/>
+	</section>
+	<section name="NewPackageWizardPage">
+		<item key="create_package_info_java" value="false"/>
+	</section>
+	<section name="NewClassCreationWizard.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1023"/>
+		<item key="DIALOG_Y_ORIGIN" value="373"/>
+		<item key="DIALOG_WIDTH" value="781"/>
+		<item key="DIALOG_HEIGHT" value="761"/>
+		<item key="DIALOG_FONT_NAME" value="1|DejaVu Sans|12.0|0|GTK|1|"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item key="org.eclipse.jdt.ui.typecomment.deprecated" value="true"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item key="create_constructor" value="false"/>
+		<item key="create_unimplemented" value="true"/>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item key="pageIndex" value="1"/>
+	</section>
+	<section name="JavaSearchPage">
+		<item key="CASE_SENSITIVE" value="false"/>
+		<item key="INCLUDE_MASK" value="11"/>
+		<item key="HISTORY_SIZE" value="1"/>
+		<section name="HISTORY0">
+			<item key="searchFor" value="0"/>
+			<item key="scope" value="0"/>
+			<item key="pattern" value="eINSTANCE"/>
+			<item key="limitTo" value="2"/>
+			<item key="matchLocations" value="0"/>
+			<item key="javaElement" value=""/>
+			<item key="isCaseSensitive" value="false"/>
+			<item key="includeMask" value="11"/>
+			<list key="workingSets">
+			</list>
+		</section>
 	</section>
 </section>

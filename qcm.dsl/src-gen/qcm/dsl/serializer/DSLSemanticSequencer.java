@@ -56,7 +56,7 @@ public class DSLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Etiquette returns Etiquette
 	 *
 	 * Constraint:
-	 *     (categorie=String0 sousEtiquette=[Etiquette|EString]?)
+	 *     (categorie=EString sousEtiquette=[Etiquette|EString]?)
 	 * </pre>
 	 */
 	protected void sequence_Etiquette(ISerializationContext context, Etiquette semanticObject) {
