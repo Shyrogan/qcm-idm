@@ -1,0 +1,9 @@
+package qcm.m2m;
+
+import qcm.dsl.DSLStandaloneSetup;
+
+public class M2M {
+	public static void main(String[] args) {
+		new DSLStandaloneSetup().createInjectorAndDoEMFRegistration();
+	}
+}

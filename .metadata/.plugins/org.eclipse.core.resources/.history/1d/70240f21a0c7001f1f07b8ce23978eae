@@ -1,0 +1,21 @@
+package qcm.m2m;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.resource.XtextResourceSet;
+
+import com.google.inject.Injector;
+
+import qcm.Questionnaire;
+import qcm.dsl.DSLStandaloneSetup;
+
+public class M2M {
+	public static void main(String[] args) {
+		Injector injector = new DSLStandaloneSetup().createInjectorAndDoEMFRegistration();
+		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+		Resource resource = resourceSet.createResource(URI.createURI("model/questionnaire.qcm"));
+		resource.load(resourceSet.getLoadOptions());
+		Questionnaire questionnaire = (Questionnaire) resource.getContents().get(0);
+		System.out.print(questionnaire);
+	}
+}
