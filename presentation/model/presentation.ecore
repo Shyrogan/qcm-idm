@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="presentation" nsURI="http://www.example.org/presentation" nsPrefix="presentation">
+  <eClassifiers xsi:type="ecore:EClass" name="QCMPresentation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titre" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="premiereQuestion" lowerBound="1"
+        eType="#//PageQuestion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questions" upperBound="-1"
+        eType="#//PageQuestion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageQuestion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="question" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bonneReponse" eType="#//ElementReponse"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reponses" upperBound="-1"
+        eType="#//ElementReponse"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementReponse">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="texte" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

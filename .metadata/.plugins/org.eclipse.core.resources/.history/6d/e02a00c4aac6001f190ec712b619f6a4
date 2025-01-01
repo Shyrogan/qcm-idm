@@ -1,7 +1,0 @@
-package qcm.m2m;
-
-public class M2M {
-	public static void main(String[] args) {
-		
-	}
-}
