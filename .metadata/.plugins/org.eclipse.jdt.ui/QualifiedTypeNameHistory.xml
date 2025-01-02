@@ -2,4 +2,9 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="qcm.QcmPackage"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="presentation.QCMPresentation"/>
+    <fullyQualifiedTypeName name="presentation.impl.QCMPresentationImpl"/>
+    <fullyQualifiedTypeName name="presentation.PresentationFactory"/>
+    <fullyQualifiedTypeName name="qcm.Question"/>
+    <fullyQualifiedTypeName name="presentation.PageQuestion"/>
 </qualifiedTypeNameHistroy>

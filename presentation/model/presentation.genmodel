@@ -9,15 +9,16 @@
   <foreignModel>presentation.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Presentation" disposableProviderFactory="true" ecorePackage="presentation.ecore#/">
-    <genClasses ecoreClass="presentation.ecore#//QCMPresentation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//QCMPresentation/titre"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//QCMPresentation/premiereQuestion"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//QCMPresentation/questions"/>
+    <genClasses ecoreClass="presentation.ecore#//ElementPresentation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementPresentation/titre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementPresentation/premiereQuestion"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementPresentation/questions"/>
     </genClasses>
-    <genClasses ecoreClass="presentation.ecore#//PageQuestion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//PageQuestion/question"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//PageQuestion/bonneReponse"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//PageQuestion/reponses"/>
+    <genClasses ecoreClass="presentation.ecore#//ElementQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementQuestion/intitule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementQuestion/bonneReponse"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementQuestion/reponses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementQuestion/retourPrecedentPossible"/>
     </genClasses>
     <genClasses ecoreClass="presentation.ecore#//ElementReponse">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementReponse/texte"/>
