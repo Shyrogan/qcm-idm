@@ -66,23 +66,37 @@ public class PresentationSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case PresentationPackage.QCM_PRESENTATION: {
-			QCMPresentation qcmPresentation = (QCMPresentation) theEObject;
-			T result = caseQCMPresentation(qcmPresentation);
+		case PresentationPackage.PRESENTATION: {
+			Presentation presentation = (Presentation) theEObject;
+			T result = casePresentation(presentation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PresentationPackage.PAGE_QUESTION: {
-			PageQuestion pageQuestion = (PageQuestion) theEObject;
-			T result = casePageQuestion(pageQuestion);
+		case PresentationPackage.PAGE: {
+			Page page = (Page) theEObject;
+			T result = casePage(page);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PresentationPackage.ELEMENT_REPONSE: {
-			ElementReponse elementReponse = (ElementReponse) theEObject;
-			T result = caseElementReponse(elementReponse);
+		case PresentationPackage.QUESTION_AFFICHEE: {
+			QuestionAffichee questionAffichee = (QuestionAffichee) theEObject;
+			T result = caseQuestionAffichee(questionAffichee);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PresentationPackage.REPONSE_PROPOSEE: {
+			ReponseProposee reponseProposee = (ReponseProposee) theEObject;
+			T result = caseReponseProposee(reponseProposee);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PresentationPackage.CATEGORIE_QUESTION: {
+			CategorieQuestion categorieQuestion = (CategorieQuestion) theEObject;
+			T result = caseCategorieQuestion(categorieQuestion);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -93,47 +107,77 @@ public class PresentationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QCM Presentation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Presentation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QCM Presentation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Presentation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseQCMPresentation(QCMPresentation object) {
+	public T casePresentation(Presentation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Page Question</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Page</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Page Question</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Page</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePageQuestion(PageQuestion object) {
+	public T casePage(Page object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Element Reponse</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Question Affichee</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Element Reponse</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Question Affichee</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseElementReponse(ElementReponse object) {
+	public T caseQuestionAffichee(QuestionAffichee object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reponse Proposee</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reponse Proposee</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReponseProposee(ReponseProposee object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Categorie Question</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Categorie Question</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCategorieQuestion(CategorieQuestion object) {
 		return null;
 	}
 

@@ -22,31 +22,49 @@ public interface PresentationFactory extends EFactory {
 	PresentationFactory eINSTANCE = presentation.impl.PresentationFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>QCM Presentation</em>'.
+	 * Returns a new object of class '<em>Presentation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>QCM Presentation</em>'.
+	 * @return a new object of class '<em>Presentation</em>'.
 	 * @generated
 	 */
-	QCMPresentation createQCMPresentation();
+	Presentation createPresentation();
 
 	/**
-	 * Returns a new object of class '<em>Page Question</em>'.
+	 * Returns a new object of class '<em>Page</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Page Question</em>'.
+	 * @return a new object of class '<em>Page</em>'.
 	 * @generated
 	 */
-	PageQuestion createPageQuestion();
+	Page createPage();
 
 	/**
-	 * Returns a new object of class '<em>Element Reponse</em>'.
+	 * Returns a new object of class '<em>Question Affichee</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Element Reponse</em>'.
+	 * @return a new object of class '<em>Question Affichee</em>'.
 	 * @generated
 	 */
-	ElementReponse createElementReponse();
+	QuestionAffichee createQuestionAffichee();
+
+	/**
+	 * Returns a new object of class '<em>Reponse Proposee</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reponse Proposee</em>'.
+	 * @generated
+	 */
+	ReponseProposee createReponseProposee();
+
+	/**
+	 * Returns a new object of class '<em>Categorie Question</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Categorie Question</em>'.
+	 * @generated
+	 */
+	CategorieQuestion createCategorieQuestion();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -19,7 +19,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Question/intitule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Question/reponseUnique"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qcm.ecore#//Question/difficulte"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Question/questionSuivante"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Question/reponses"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference qcm.ecore#//Question/etiquette"/>
     </genClasses>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<presentation:Presentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:presentation="http://www.example.org/presentation" titre="Quiz de Culture G&#xe9;n&#xe9;rale" retourAutorise="true" questionsAleatoires="true">
+  <pages numero="1" pageSuivante="//@pages.1">
+    <question categories="//@categoriesSelectionnees.0 //@categoriesSelectionnees.1" intitule="Quelle est la capitale de la France?" niveauDifficulte="1">
+      <reponsesPossibles texte="Paris" estCorrecte="true"/>
+      <reponsesPossibles texte="Lyon"/>
+      <reponsesPossibles texte="Marseille"/>
+    </question>
+  </pages>
+  <pages numero="2" pageSuivante="//@pages.2" pagePrecedente="//@pages.0">
+    <question categories="//@categoriesSelectionnees.2 //@categoriesSelectionnees.3" intitule="Quels sont les langages de programmation orient&#xe9;s objet parmi les suivants?" niveauDifficulte="3" choixMultiple="true">
+      <reponsesPossibles texte="Java" estCorrecte="true"/>
+      <reponsesPossibles texte="Python" estCorrecte="true"/>
+      <reponsesPossibles texte="C"/>
+      <reponsesPossibles texte="C++" estCorrecte="true"/>
+    </question>
+  </pages>
+  <pages numero="3" pageSuivante="//@pages.3" pagePrecedente="//@pages.1">
+    <question categories="//@categoriesSelectionnees.4 //@categoriesSelectionnees.5" intitule="Quel est l'auteur de 'Les Mis&#xe9;rables'?" niveauDifficulte="2" choixMultiple="true">
+      <reponsesPossibles texte="Victor Hugo" estCorrecte="true"/>
+      <reponsesPossibles texte="&#xc9;mile Zola"/>
+      <reponsesPossibles texte="Albert Camus"/>
+    </question>
+  </pages>
+  <pages numero="4" pageSuivante="//@pages.4" pagePrecedente="//@pages.2">
+    <question categories="//@categoriesSelectionnees.6 //@categoriesSelectionnees.7" intitule="Quelles plan&#xe8;tes sont des g&#xe9;antes gazeuses?" niveauDifficulte="3" choixMultiple="true">
+      <reponsesPossibles texte="Jupiter" estCorrecte="true"/>
+      <reponsesPossibles texte="Saturne" estCorrecte="true"/>
+      <reponsesPossibles texte="Mars"/>
+      <reponsesPossibles texte="Uranus" estCorrecte="true"/>
+    </question>
+  </pages>
+  <pages numero="5" pagePrecedente="//@pages.3">
+    <question categories="//@categoriesSelectionnees.2 //@categoriesSelectionnees.8" intitule="En quelle ann&#xe9;e a &#xe9;t&#xe9; cr&#xe9;&#xe9; le World Wide Web?" niveauDifficulte="4">
+      <reponsesPossibles texte="1989" estCorrecte="true"/>
+      <reponsesPossibles texte="1995"/>
+      <reponsesPossibles texte="1983"/>
+    </question>
+  </pages>
+  <categoriesSelectionnees nom="G&#xe9;ographie"/>
+  <categoriesSelectionnees nom="Europe"/>
+  <categoriesSelectionnees nom="Informatique"/>
+  <categoriesSelectionnees nom="Programmation"/>
+  <categoriesSelectionnees nom="Litt&#xe9;rature"/>
+  <categoriesSelectionnees nom="Culture"/>
+  <categoriesSelectionnees nom="Astronomie"/>
+  <categoriesSelectionnees nom="Science"/>
+  <categoriesSelectionnees nom="Histoire"/>
+</presentation:Presentation>

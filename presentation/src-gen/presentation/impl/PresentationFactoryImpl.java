@@ -56,12 +56,16 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case PresentationPackage.QCM_PRESENTATION:
-			return createQCMPresentation();
-		case PresentationPackage.PAGE_QUESTION:
-			return createPageQuestion();
-		case PresentationPackage.ELEMENT_REPONSE:
-			return createElementReponse();
+		case PresentationPackage.PRESENTATION:
+			return createPresentation();
+		case PresentationPackage.PAGE:
+			return createPage();
+		case PresentationPackage.QUESTION_AFFICHEE:
+			return createQuestionAffichee();
+		case PresentationPackage.REPONSE_PROPOSEE:
+			return createReponseProposee();
+		case PresentationPackage.CATEGORIE_QUESTION:
+			return createCategorieQuestion();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -73,9 +77,9 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public QCMPresentation createQCMPresentation() {
-		QCMPresentationImpl qcmPresentation = new QCMPresentationImpl();
-		return qcmPresentation;
+	public Presentation createPresentation() {
+		PresentationImpl presentation = new PresentationImpl();
+		return presentation;
 	}
 
 	/**
@@ -84,9 +88,9 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public PageQuestion createPageQuestion() {
-		PageQuestionImpl pageQuestion = new PageQuestionImpl();
-		return pageQuestion;
+	public Page createPage() {
+		PageImpl page = new PageImpl();
+		return page;
 	}
 
 	/**
@@ -95,9 +99,31 @@ public class PresentationFactoryImpl extends EFactoryImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public ElementReponse createElementReponse() {
-		ElementReponseImpl elementReponse = new ElementReponseImpl();
-		return elementReponse;
+	public QuestionAffichee createQuestionAffichee() {
+		QuestionAfficheeImpl questionAffichee = new QuestionAfficheeImpl();
+		return questionAffichee;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ReponseProposee createReponseProposee() {
+		ReponseProposeeImpl reponseProposee = new ReponseProposeeImpl();
+		return reponseProposee;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CategorieQuestion createCategorieQuestion() {
+		CategorieQuestionImpl categorieQuestion = new CategorieQuestionImpl();
+		return categorieQuestion;
 	}
 
 	/**

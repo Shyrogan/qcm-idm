@@ -1,21 +1,139 @@
-Questionnaire {  
-  titre "Hello"  
-  retourArriere false  
-  possede {   
-    reponseUnique   
-    Question {    
-      intitule "Ma question numéro 1"    
-      difficulte 1    
+melange
+Questionnaire {
+  titre "Quiz de Culture Générale"
+  retourArriere true
+  possede {
+    reponseUnique
+    Question {
+      intitule "Quelle est la capitale de la France?"
+      difficulte 1
       reponses {
-          Reponse {
-            intitule "Adada"
+        valide
+        Reponse {
+          intitule "Paris"
+        },
+        Reponse {
+          intitule "Lyon"
+        },
+        Reponse {
+          intitule "Marseille"
         }
       }
       etiquette {
-          Etiquette {
-              categorie "Zaza"
-          }
+        Etiquette {
+          categorie "Géographie"
+        },
+        Etiquette {
+          categorie "Europe"
+        }
       }
-    }  
-  } 
+    },
+    Question {
+      intitule "Quels sont les langages de programmation orientés objet parmi les suivants?"
+      difficulte 3
+      reponses {
+        valide
+        Reponse {
+          intitule "Java"
+        },
+        valide
+        Reponse {
+          intitule "Python"
+        },
+        Reponse {
+          intitule "C"
+        },
+        valide
+        Reponse {
+          intitule "C++"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Informatique"
+        },
+        Etiquette {
+          categorie "Programmation"
+        }
+      }
+    },
+    Question {
+      intitule "Quel est l'auteur de 'Les Misérables'?"
+      difficulte 2
+      reponses {
+        valide
+        Reponse {
+          intitule "Victor Hugo"
+        },
+        Reponse {
+          intitule "Émile Zola"
+        },
+        Reponse {
+          intitule "Albert Camus"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Littérature"
+        },
+        Etiquette {
+          categorie "Culture"
+        }
+      }
+    },
+    Question {
+      intitule "Quelles planètes sont des géantes gazeuses?"
+      difficulte 3
+      reponses {
+        valide
+        Reponse {
+          intitule "Jupiter"
+        },
+        valide
+        Reponse {
+          intitule "Saturne"
+        },
+        Reponse {
+          intitule "Mars"
+        },
+        valide
+        Reponse {
+          intitule "Uranus"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Astronomie"
+        },
+        Etiquette {
+          categorie "Science"
+        }
+      }
+    },
+    reponseUnique
+    Question {
+      intitule "En quelle année a été créé le World Wide Web?"
+      difficulte 4
+      reponses {
+        valide
+        Reponse {
+          intitule "1989"
+        },
+        Reponse {
+          intitule "1995"
+        },
+        Reponse {
+          intitule "1983"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Informatique"
+        },
+        Etiquette {
+          categorie "Histoire"
+        }
+      }
+    }
+  }
 }

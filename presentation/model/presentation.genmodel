@@ -9,19 +9,33 @@
   <foreignModel>presentation.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Presentation" disposableProviderFactory="true" ecorePackage="presentation.ecore#/">
-    <genClasses ecoreClass="presentation.ecore#//ElementPresentation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementPresentation/titre"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementPresentation/premiereQuestion"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementPresentation/questions"/>
+    <genClasses ecoreClass="presentation.ecore#//Presentation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//Presentation/titre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//Presentation/retourAutorise"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//Presentation/questionsAleatoires"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Presentation/pages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Presentation/categoriesSelectionnees"/>
     </genClasses>
-    <genClasses ecoreClass="presentation.ecore#//ElementQuestion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementQuestion/intitule"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementQuestion/bonneReponse"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//ElementQuestion/reponses"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementQuestion/retourPrecedentPossible"/>
+    <genClasses ecoreClass="presentation.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//Page/numero"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Page/question"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//Page/pageSuivante"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//Page/pagePrecedente"/>
     </genClasses>
-    <genClasses ecoreClass="presentation.ecore#//ElementReponse">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ElementReponse/texte"/>
+    <genClasses ecoreClass="presentation.ecore#//QuestionAffichee">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference presentation.ecore#//QuestionAffichee/categories"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//QuestionAffichee/intitule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//QuestionAffichee/niveauDifficulte"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//QuestionAffichee/choixMultiple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//QuestionAffichee/reponsesPossibles"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//ReponseProposee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ReponseProposee/texte"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//ReponseProposee/estCorrecte"/>
+    </genClasses>
+    <genClasses ecoreClass="presentation.ecore#//CategorieQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//CategorieQuestion/nom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//CategorieQuestion/sousCategories"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

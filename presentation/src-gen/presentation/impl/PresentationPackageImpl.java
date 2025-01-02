@@ -9,11 +9,13 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import presentation.ElementReponse;
-import presentation.PageQuestion;
+import presentation.CategorieQuestion;
+import presentation.Page;
+import presentation.Presentation;
 import presentation.PresentationFactory;
 import presentation.PresentationPackage;
-import presentation.QCMPresentation;
+import presentation.QuestionAffichee;
+import presentation.ReponseProposee;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,21 +29,35 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass qcmPresentationEClass = null;
+	private EClass presentationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pageQuestionEClass = null;
+	private EClass pageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass elementReponseEClass = null;
+	private EClass questionAfficheeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reponseProposeeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass categorieQuestionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -113,8 +129,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EClass getQCMPresentation() {
-		return qcmPresentationEClass;
+	public EClass getPresentation() {
+		return presentationEClass;
 	}
 
 	/**
@@ -123,8 +139,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getQCMPresentation_Titre() {
-		return (EAttribute) qcmPresentationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPresentation_Titre() {
+		return (EAttribute) presentationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -133,8 +149,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EReference getQCMPresentation_PremiereQuestion() {
-		return (EReference) qcmPresentationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getPresentation_RetourAutorise() {
+		return (EAttribute) presentationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -143,8 +159,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EReference getQCMPresentation_Questions() {
-		return (EReference) qcmPresentationEClass.getEStructuralFeatures().get(2);
+	public EAttribute getPresentation_QuestionsAleatoires() {
+		return (EAttribute) presentationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -153,8 +169,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EClass getPageQuestion() {
-		return pageQuestionEClass;
+	public EReference getPresentation_Pages() {
+		return (EReference) presentationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -163,8 +179,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPageQuestion_Question() {
-		return (EAttribute) pageQuestionEClass.getEStructuralFeatures().get(0);
+	public EReference getPresentation_CategoriesSelectionnees() {
+		return (EReference) presentationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -173,8 +189,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EReference getPageQuestion_BonneReponse() {
-		return (EReference) pageQuestionEClass.getEStructuralFeatures().get(1);
+	public EClass getPage() {
+		return pageEClass;
 	}
 
 	/**
@@ -183,8 +199,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EReference getPageQuestion_Reponses() {
-		return (EReference) pageQuestionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getPage_Numero() {
+		return (EAttribute) pageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -193,8 +209,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EClass getElementReponse() {
-		return elementReponseEClass;
+	public EReference getPage_Question() {
+		return (EReference) pageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -203,8 +219,138 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getElementReponse_Texte() {
-		return (EAttribute) elementReponseEClass.getEStructuralFeatures().get(0);
+	public EReference getPage_PageSuivante() {
+		return (EReference) pageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPage_PagePrecedente() {
+		return (EReference) pageEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getQuestionAffichee() {
+		return questionAfficheeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQuestionAffichee_Categories() {
+		return (EReference) questionAfficheeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQuestionAffichee_Intitule() {
+		return (EAttribute) questionAfficheeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQuestionAffichee_NiveauDifficulte() {
+		return (EAttribute) questionAfficheeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQuestionAffichee_ChoixMultiple() {
+		return (EAttribute) questionAfficheeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQuestionAffichee_ReponsesPossibles() {
+		return (EReference) questionAfficheeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getReponseProposee() {
+		return reponseProposeeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getReponseProposee_Texte() {
+		return (EAttribute) reponseProposeeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getReponseProposee_EstCorrecte() {
+		return (EAttribute) reponseProposeeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCategorieQuestion() {
+		return categorieQuestionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCategorieQuestion_Nom() {
+		return (EAttribute) categorieQuestionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCategorieQuestion_SousCategories() {
+		return (EReference) categorieQuestionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -237,18 +383,33 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		isCreated = true;
 
 		// Create classes and their features
-		qcmPresentationEClass = createEClass(QCM_PRESENTATION);
-		createEAttribute(qcmPresentationEClass, QCM_PRESENTATION__TITRE);
-		createEReference(qcmPresentationEClass, QCM_PRESENTATION__PREMIERE_QUESTION);
-		createEReference(qcmPresentationEClass, QCM_PRESENTATION__QUESTIONS);
+		presentationEClass = createEClass(PRESENTATION);
+		createEAttribute(presentationEClass, PRESENTATION__TITRE);
+		createEAttribute(presentationEClass, PRESENTATION__RETOUR_AUTORISE);
+		createEAttribute(presentationEClass, PRESENTATION__QUESTIONS_ALEATOIRES);
+		createEReference(presentationEClass, PRESENTATION__PAGES);
+		createEReference(presentationEClass, PRESENTATION__CATEGORIES_SELECTIONNEES);
 
-		pageQuestionEClass = createEClass(PAGE_QUESTION);
-		createEAttribute(pageQuestionEClass, PAGE_QUESTION__QUESTION);
-		createEReference(pageQuestionEClass, PAGE_QUESTION__BONNE_REPONSE);
-		createEReference(pageQuestionEClass, PAGE_QUESTION__REPONSES);
+		pageEClass = createEClass(PAGE);
+		createEAttribute(pageEClass, PAGE__NUMERO);
+		createEReference(pageEClass, PAGE__QUESTION);
+		createEReference(pageEClass, PAGE__PAGE_SUIVANTE);
+		createEReference(pageEClass, PAGE__PAGE_PRECEDENTE);
 
-		elementReponseEClass = createEClass(ELEMENT_REPONSE);
-		createEAttribute(elementReponseEClass, ELEMENT_REPONSE__TEXTE);
+		questionAfficheeEClass = createEClass(QUESTION_AFFICHEE);
+		createEReference(questionAfficheeEClass, QUESTION_AFFICHEE__CATEGORIES);
+		createEAttribute(questionAfficheeEClass, QUESTION_AFFICHEE__INTITULE);
+		createEAttribute(questionAfficheeEClass, QUESTION_AFFICHEE__NIVEAU_DIFFICULTE);
+		createEAttribute(questionAfficheeEClass, QUESTION_AFFICHEE__CHOIX_MULTIPLE);
+		createEReference(questionAfficheeEClass, QUESTION_AFFICHEE__REPONSES_POSSIBLES);
+
+		reponseProposeeEClass = createEClass(REPONSE_PROPOSEE);
+		createEAttribute(reponseProposeeEClass, REPONSE_PROPOSEE__TEXTE);
+		createEAttribute(reponseProposeeEClass, REPONSE_PROPOSEE__EST_CORRECTE);
+
+		categorieQuestionEClass = createEClass(CATEGORIE_QUESTION);
+		createEAttribute(categorieQuestionEClass, CATEGORIE_QUESTION__NOM);
+		createEReference(categorieQuestionEClass, CATEGORIE_QUESTION__SOUS_CATEGORIES);
 	}
 
 	/**
@@ -282,34 +443,71 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(qcmPresentationEClass, QCMPresentation.class, "QCMPresentation", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(presentationEClass, Presentation.class, "Presentation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getQCMPresentation_Titre(), ecorePackage.getEString(), "titre", null, 1, 1,
-				QCMPresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getQCMPresentation_PremiereQuestion(), this.getPageQuestion(), null, "premiereQuestion", null, 1,
-				1, QCMPresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQCMPresentation_Questions(), this.getPageQuestion(), null, "questions", null, 0, -1,
-				QCMPresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(pageQuestionEClass, PageQuestion.class, "PageQuestion", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPageQuestion_Question(), ecorePackage.getEString(), "question", null, 1, 1,
-				PageQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEReference(getPageQuestion_BonneReponse(), this.getElementReponse(), null, "bonneReponse", null, 0, 1,
-				PageQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPageQuestion_Reponses(), this.getElementReponse(), null, "reponses", null, 0, -1,
-				PageQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(elementReponseEClass, ElementReponse.class, "ElementReponse", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getElementReponse_Texte(), ecorePackage.getEString(), "texte", null, 1, 1, ElementReponse.class,
+		initEAttribute(getPresentation_Titre(), ecorePackage.getEString(), "titre", null, 1, 1, Presentation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPresentation_RetourAutorise(), ecorePackage.getEBoolean(), "retourAutorise", null, 0, 1,
+				Presentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPresentation_QuestionsAleatoires(), ecorePackage.getEBoolean(), "questionsAleatoires", null,
+				0, 1, Presentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getPresentation_Pages(), this.getPage(), null, "pages", null, 0, -1, Presentation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPresentation_CategoriesSelectionnees(), this.getCategorieQuestion(), null,
+				"categoriesSelectionnees", null, 0, -1, Presentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPage_Numero(), ecorePackage.getEInt(), "numero", null, 0, 1, Page.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPage_Question(), this.getQuestionAffichee(), null, "question", null, 1, 1, Page.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPage_PageSuivante(), this.getPage(), null, "pageSuivante", null, 0, 1, Page.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPage_PagePrecedente(), this.getPage(), null, "pagePrecedente", null, 0, 1, Page.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(questionAfficheeEClass, QuestionAffichee.class, "QuestionAffichee", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuestionAffichee_Categories(), this.getCategorieQuestion(), null, "categories", null, 0, -1,
+				QuestionAffichee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuestionAffichee_Intitule(), ecorePackage.getEString(), "intitule", null, 1, 1,
+				QuestionAffichee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuestionAffichee_NiveauDifficulte(), ecorePackage.getEInt(), "niveauDifficulte", null, 0, 1,
+				QuestionAffichee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuestionAffichee_ChoixMultiple(), ecorePackage.getEBoolean(), "choixMultiple", null, 0, 1,
+				QuestionAffichee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionAffichee_ReponsesPossibles(), this.getReponseProposee(), null, "reponsesPossibles",
+				null, 0, -1, QuestionAffichee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(reponseProposeeEClass, ReponseProposee.class, "ReponseProposee", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReponseProposee_Texte(), ecorePackage.getEString(), "texte", null, 1, 1,
+				ReponseProposee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReponseProposee_EstCorrecte(), ecorePackage.getEBoolean(), "estCorrecte", null, 0, 1,
+				ReponseProposee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(categorieQuestionEClass, CategorieQuestion.class, "CategorieQuestion", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCategorieQuestion_Nom(), ecorePackage.getEString(), "nom", null, 1, 1,
+				CategorieQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getCategorieQuestion_SousCategories(), this.getCategorieQuestion(), null, "sousCategories", null,
+				0, -1, CategorieQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

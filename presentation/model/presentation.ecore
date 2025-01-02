@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="presentation" nsURI="http://www.example.org/presentation" nsPrefix="presentation">
-  <eClassifiers xsi:type="ecore:EClass" name="ElementPresentation">
+  <eClassifiers xsi:type="ecore:EClass" name="Presentation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="titre" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="premiereQuestion" lowerBound="1"
-        eType="#//ElementQuestion"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="questions" upperBound="-1"
-        eType="#//ElementQuestion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="retourAutorise" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="questionsAleatoires" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
+        eType="#//Page" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categoriesSelectionnees"
+        upperBound="-1" eType="#//CategorieQuestion" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ElementQuestion">
+  <eClassifiers xsi:type="ecore:EClass" name="Page">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numero" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="question" lowerBound="1"
+        eType="#//QuestionAffichee" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageSuivante" eType="#//Page"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pagePrecedente" eType="#//Page"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QuestionAffichee">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
+        eType="#//CategorieQuestion"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intitule" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bonneReponse" lowerBound="1"
-        eType="#//ElementReponse"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reponses" lowerBound="1"
-        upperBound="-1" eType="#//ElementReponse"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="retourPrecedentPossible"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="niveauDifficulte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="choixMultiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reponsesPossibles" upperBound="-1"
+        eType="#//ReponseProposee" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ElementReponse">
+  <eClassifiers xsi:type="ecore:EClass" name="ReponseProposee">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texte" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="estCorrecte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CategorieQuestion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sousCategories" upperBound="-1"
+        eType="#//CategorieQuestion" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

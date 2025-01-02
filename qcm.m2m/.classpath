@@ -7,7 +7,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/presentation"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/qcm"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/presentation"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/qcm.dsl"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/qcm.dsl.ide"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/qcm.dsl.ui"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

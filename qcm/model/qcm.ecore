@@ -20,7 +20,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="difficulte" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="questionSuivante" eType="#//Question"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reponses" lowerBound="1"
         upperBound="-1" eType="#//Reponse" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="etiquette" upperBound="-1"

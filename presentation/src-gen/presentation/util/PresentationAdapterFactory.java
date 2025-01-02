@@ -67,18 +67,28 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PresentationSwitch<Adapter> modelSwitch = new PresentationSwitch<Adapter>() {
 		@Override
-		public Adapter caseQCMPresentation(QCMPresentation object) {
-			return createQCMPresentationAdapter();
+		public Adapter casePresentation(Presentation object) {
+			return createPresentationAdapter();
 		}
 
 		@Override
-		public Adapter casePageQuestion(PageQuestion object) {
-			return createPageQuestionAdapter();
+		public Adapter casePage(Page object) {
+			return createPageAdapter();
 		}
 
 		@Override
-		public Adapter caseElementReponse(ElementReponse object) {
-			return createElementReponseAdapter();
+		public Adapter caseQuestionAffichee(QuestionAffichee object) {
+			return createQuestionAfficheeAdapter();
+		}
+
+		@Override
+		public Adapter caseReponseProposee(ReponseProposee object) {
+			return createReponseProposeeAdapter();
+		}
+
+		@Override
+		public Adapter caseCategorieQuestion(CategorieQuestion object) {
+			return createCategorieQuestionAdapter();
 		}
 
 		@Override
@@ -101,44 +111,72 @@ public class PresentationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link presentation.QCMPresentation <em>QCM Presentation</em>}'.
+	 * Creates a new adapter for an object of class '{@link presentation.Presentation <em>Presentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see presentation.QCMPresentation
+	 * @see presentation.Presentation
 	 * @generated
 	 */
-	public Adapter createQCMPresentationAdapter() {
+	public Adapter createPresentationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link presentation.PageQuestion <em>Page Question</em>}'.
+	 * Creates a new adapter for an object of class '{@link presentation.Page <em>Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see presentation.PageQuestion
+	 * @see presentation.Page
 	 * @generated
 	 */
-	public Adapter createPageQuestionAdapter() {
+	public Adapter createPageAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link presentation.ElementReponse <em>Element Reponse</em>}'.
+	 * Creates a new adapter for an object of class '{@link presentation.QuestionAffichee <em>Question Affichee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see presentation.ElementReponse
+	 * @see presentation.QuestionAffichee
 	 * @generated
 	 */
-	public Adapter createElementReponseAdapter() {
+	public Adapter createQuestionAfficheeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link presentation.ReponseProposee <em>Reponse Proposee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see presentation.ReponseProposee
+	 * @generated
+	 */
+	public Adapter createReponseProposeeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link presentation.CategorieQuestion <em>Categorie Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see presentation.CategorieQuestion
+	 * @generated
+	 */
+	public Adapter createCategorieQuestionAdapter() {
 		return null;
 	}
 
