@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Quiz de Culture Générale</title>
+   <style>
+       body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; }
+       .page { display: none; background: white; padding: 20px; border-radius: 8px; 
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 50px auto; width: 50%; }
+       .active { display: block; }
+       .result-question { margin: 20px 0; padding: 15px; border-radius: 5px; }
+       .correct-answer { background-color: #d4edda; border: 1px solid #c3e6cb; }
+       .incorrect-answer { background-color: #f8d7da; border: 1px solid #f5c6cb; }
+       .finish-page { display: none; background: white; padding: 20px; border-radius: 8px; 
+                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 50px auto; width: 80%; }
+	   .checkmark {
+           color: #28a745;
+           margin-left: 10px;
+           font-weight: bold;
+       }
+		.question-info { 
+		    margin: 10px 0; 
+		    font-style: italic; 
+		    color: #666;
+		}
+		.difficulty {
+		    margin-right: 20px;
+		}
+   </style>
+   <script>
+       let currentPage = 0;
+       let answers = new Map();
+       let answersHistory = new Map();
+       let totalQuestions = 0;
+       let retourAutorise = true;
+
+       function showPage(index) {
+           let pages = document.querySelectorAll('.page');
+           let finishPage = document.getElementById('finish-page');
+           
+           if (index >= pages.length) {
+               pages.forEach(p => p.style.display = 'none');
+               finishPage.style.display = 'block'; 
+               document.querySelector('.pagination').style.display = 'none';
+               calculateAndDisplayResults();
+           } else {
+               pages.forEach(p => p.classList.remove('active'));
+               let page = pages.item(index);
+               if (page) {
+                   page.classList.add('active');
+                   currentPage = index;
+                   updateNavIcons();
+                   document.getElementById('page-number').textContent = `${currentPage + 1} / ${totalQuestions}`;
+               }
+           }
+       }
+
+       function validateAnswer() {
+           let currentInputs = document.querySelector('.active').querySelectorAll('input');
+           let answeredCorrectly = true;
+           let hasCheckedCorrect = false;
+           
+           currentInputs.forEach(input => {
+               if (input.checked) {
+                   if (input.getAttribute('data-correct') !== 'true') {
+                       answeredCorrectly = false;
+                   } else {
+                       hasCheckedCorrect = true;
+                   }
+               } else if (input.getAttribute('data-correct') === 'true') {
+                   answeredCorrectly = false;
+               }
+           });
+           
+           answers.set(currentPage, answeredCorrectly && hasCheckedCorrect);
+           answersHistory.set(currentPage, Array.from(currentInputs).map(input => input.checked));
+           showPage(currentPage + 1);
+       }
+
+       function calculateAndDisplayResults() {
+           let score = 0;
+           answers.forEach((isCorrect) => {
+               if (isCorrect) score++;
+           });
+
+           document.getElementById('final-score').textContent = `Score final : ${score} / ${totalQuestions}`;
+           
+           const resultContainer = document.getElementById('results-container');
+           resultContainer.innerHTML = '';
+           
+           for (let i = 0; i < totalQuestions; i++) {
+               const template = document.querySelector(`#question-template-${i+1}`);
+               if (template) {
+                   const questionElement = template.cloneNode(true);
+                   questionElement.classList.add(answers.get(i) ? 'correct-answer' : 'incorrect-answer');
+                   questionElement.style.display = 'block';
+                   resultContainer.appendChild(questionElement);
+               }
+           }
+       }
+
+       function updateNavIcons() {
+           let prevArrow = document.getElementById('prev-arrow');
+           let nextArrow = document.getElementById('next-arrow');
+           prevArrow.style.display = (!retourAutorise || currentPage <= 0) ? 'none' : 'inline';
+           nextArrow.style.display = (currentPage >= totalQuestions - 1) ? 'none' : 'inline';
+       }
+
+       document.addEventListener("DOMContentLoaded", () => {
+           totalQuestions = document.querySelectorAll('.page').length;
+           showPage(0);
+       });
+   </script>
+</head>
+<body>
+   <h1>Quiz de Culture Générale</h1>
+	<div class="page">
+	   <h2>Question 1</h2>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 1/4</span>
+	       <span class="categories">
+	           Thèmes: Géographie, Europe
+	       </span>
+	   </div>
+	   <p>Quelle est la capitale de la France?</p>
+	   <input type="radio" 
+	          name="q-page-1" 
+	          data-correct="true">
+	   Paris<br>
+	   <input type="radio" 
+	          name="q-page-1" 
+	          data-correct="false">
+	   Lyon<br>
+	   <input type="radio" 
+	          name="q-page-1" 
+	          data-correct="false">
+	   Marseille<br>
+	   <button onclick="validateAnswer()">Valider</button>
+	</div>
+	
+	<div id="question-template-1" style="display: none;">
+	   <h3>Question 1</h3>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 1/4</span>
+	       <span class="categories">
+	           Thèmes: Géographie, Europe
+	       </span>
+	   </div>
+	   <p>Quelle est la capitale de la France?</p>
+	   <div class="correct">
+	       Paris<span class="checkmark">✓</span>
+	   </div>
+	   <div class="incorrect">
+	       Lyon
+	   </div>
+	   <div class="incorrect">
+	       Marseille
+	   </div>
+	</div>
+	<div class="page">
+	   <h2>Question 2</h2>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 3/4</span>
+	       <span class="categories">
+	           Thèmes: Informatique, Programmation
+	       </span>
+	   </div>
+	   <p>Quels sont les langages de programmation orientés objet parmi les suivants?</p>
+	   <input type="checkbox" 
+	          name="q-page-2" 
+	          data-correct="true">
+	   Java<br>
+	   <input type="checkbox" 
+	          name="q-page-2" 
+	          data-correct="true">
+	   Python<br>
+	   <input type="checkbox" 
+	          name="q-page-2" 
+	          data-correct="false">
+	   C<br>
+	   <input type="checkbox" 
+	          name="q-page-2" 
+	          data-correct="true">
+	   C++<br>
+	   <button onclick="validateAnswer()">Valider</button>
+	</div>
+	
+	<div id="question-template-2" style="display: none;">
+	   <h3>Question 2</h3>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 3/4</span>
+	       <span class="categories">
+	           Thèmes: Informatique, Programmation
+	       </span>
+	   </div>
+	   <p>Quels sont les langages de programmation orientés objet parmi les suivants?</p>
+	   <div class="correct">
+	       Java<span class="checkmark">✓</span>
+	   </div>
+	   <div class="correct">
+	       Python<span class="checkmark">✓</span>
+	   </div>
+	   <div class="incorrect">
+	       C
+	   </div>
+	   <div class="correct">
+	       C++<span class="checkmark">✓</span>
+	   </div>
+	</div>
+	<div class="page">
+	   <h2>Question 3</h2>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 2/4</span>
+	       <span class="categories">
+	           Thèmes: Littérature, Culture
+	       </span>
+	   </div>
+	   <p>Quel est l'auteur de 'Les Misérables'?</p>
+	   <input type="radio" 
+	          name="q-page-3" 
+	          data-correct="true">
+	   Victor Hugo<br>
+	   <input type="radio" 
+	          name="q-page-3" 
+	          data-correct="false">
+	   Émile Zola<br>
+	   <input type="radio" 
+	          name="q-page-3" 
+	          data-correct="false">
+	   Albert Camus<br>
+	   <button onclick="validateAnswer()">Valider</button>
+	</div>
+	
+	<div id="question-template-3" style="display: none;">
+	   <h3>Question 3</h3>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 2/4</span>
+	       <span class="categories">
+	           Thèmes: Littérature, Culture
+	       </span>
+	   </div>
+	   <p>Quel est l'auteur de 'Les Misérables'?</p>
+	   <div class="correct">
+	       Victor Hugo<span class="checkmark">✓</span>
+	   </div>
+	   <div class="incorrect">
+	       Émile Zola
+	   </div>
+	   <div class="incorrect">
+	       Albert Camus
+	   </div>
+	</div>
+	<div class="page">
+	   <h2>Question 4</h2>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 3/4</span>
+	       <span class="categories">
+	           Thèmes: Astronomie, Science
+	       </span>
+	   </div>
+	   <p>Quelles planètes sont des géantes gazeuses?</p>
+	   <input type="checkbox" 
+	          name="q-page-4" 
+	          data-correct="true">
+	   Jupiter<br>
+	   <input type="checkbox" 
+	          name="q-page-4" 
+	          data-correct="true">
+	   Saturne<br>
+	   <input type="checkbox" 
+	          name="q-page-4" 
+	          data-correct="false">
+	   Mars<br>
+	   <input type="checkbox" 
+	          name="q-page-4" 
+	          data-correct="true">
+	   Uranus<br>
+	   <button onclick="validateAnswer()">Valider</button>
+	</div>
+	
+	<div id="question-template-4" style="display: none;">
+	   <h3>Question 4</h3>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 3/4</span>
+	       <span class="categories">
+	           Thèmes: Astronomie, Science
+	       </span>
+	   </div>
+	   <p>Quelles planètes sont des géantes gazeuses?</p>
+	   <div class="correct">
+	       Jupiter<span class="checkmark">✓</span>
+	   </div>
+	   <div class="correct">
+	       Saturne<span class="checkmark">✓</span>
+	   </div>
+	   <div class="incorrect">
+	       Mars
+	   </div>
+	   <div class="correct">
+	       Uranus<span class="checkmark">✓</span>
+	   </div>
+	</div>
+	<div class="page">
+	   <h2>Question 5</h2>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 4/4</span>
+	       <span class="categories">
+	           Thèmes: Informatique, Histoire
+	       </span>
+	   </div>
+	   <p>En quelle année a été créé le World Wide Web?</p>
+	   <input type="radio" 
+	          name="q-page-5" 
+	          data-correct="true">
+	   1989<br>
+	   <input type="radio" 
+	          name="q-page-5" 
+	          data-correct="false">
+	   1995<br>
+	   <input type="radio" 
+	          name="q-page-5" 
+	          data-correct="false">
+	   1983<br>
+	   <button onclick="validateAnswer()">Valider</button>
+	</div>
+	
+	<div id="question-template-5" style="display: none;">
+	   <h3>Question 5</h3>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: 4/4</span>
+	       <span class="categories">
+	           Thèmes: Informatique, Histoire
+	       </span>
+	   </div>
+	   <p>En quelle année a été créé le World Wide Web?</p>
+	   <div class="correct">
+	       1989<span class="checkmark">✓</span>
+	   </div>
+	   <div class="incorrect">
+	       1995
+	   </div>
+	   <div class="incorrect">
+	       1983
+	   </div>
+	</div>
+   
+   <div id="finish-page" class="finish-page">
+       <h2>QCM Terminé</h2>
+       <p id="final-score"></p>
+       <div id="results-container"></div>
+   </div>
+   
+   <div class="pagination">
+       <span id="prev-arrow" class="nav-icons" onclick="showPage(currentPage - 1)">⬅</span>
+       <span id="page-number"></span>
+       <span id="next-arrow" class="nav-icons" onclick="showPage(currentPage + 1)">➡</span>
+   </div>
+</body>
+</html>

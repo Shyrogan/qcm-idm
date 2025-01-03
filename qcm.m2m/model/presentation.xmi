@@ -16,7 +16,7 @@
     </question>
   </pages>
   <pages numero="3" pageSuivante="//@pages.3" pagePrecedente="//@pages.1">
-    <question categories="//@categoriesSelectionnees.4 //@categoriesSelectionnees.5" intitule="Quel est l'auteur de 'Les Mis&#xe9;rables'?" niveauDifficulte="2" choixMultiple="true">
+    <question categories="//@categoriesSelectionnees.4 //@categoriesSelectionnees.5" intitule="Quel est l'auteur de 'Les Mis&#xe9;rables'?" niveauDifficulte="2" choixMultiple="false">
       <reponsesPossibles texte="Victor Hugo" estCorrecte="true"/>
       <reponsesPossibles texte="&#xc9;mile Zola"/>
       <reponsesPossibles texte="Albert Camus"/>

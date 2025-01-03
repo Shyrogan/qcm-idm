@@ -120,8 +120,8 @@ public interface Questionnaire extends EObject {
 	EList<Question> getPossede();
 	
 	//contraintes OCL:
-	-- Définition de la dérivation de nbQuestion
-	context Questionnaire::nbQuestion : ELong
-	derive: self.possede->size()
+	//-- Définition de la dérivation de nbQuestion
+	//context Questionnaire::nbQuestion : ELong
+	//derive: self.possede->size()
 	
 } // Questionnaire

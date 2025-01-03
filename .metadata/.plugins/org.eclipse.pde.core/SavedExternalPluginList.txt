@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1735836511343
+# List of external plug-in models previously loaded. Timestamp: 1735917415452
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/bcpg_1.78.1.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/bcpkix_1.78.1.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/bcprov_1.78.1.jar
@@ -119,7 +119,23 @@ file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/p
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/org.bndtools.versioncontrol.ignores.manager_7.0.0.202310060912.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/org.bndtools.versioncontrol.ignores.plugin.git_7.0.0.202310060912.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/org.eclipse.acceleo.annotations_7.0.0.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.common_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.common.ide_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.common.ui_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.compatibility_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.compatibility.ui_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.doc_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.engine_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.ide.ui_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.model_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.model.edit_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.parser_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.profiler_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.profiler.edit_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.profiler.editor_3.7.17.202408201303.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/org.eclipse.acceleo.query_7.0.0.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.traceability_3.7.17.202408201303.jar
+file:/home/sebastien/.eclipse/org.eclipse.platform_4.33/plugins/org.eclipse.acceleo.traceability.model_3.7.17.202408201303.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/org.eclipse.acceleo.ui.interpreter_3.7.17.202408201303.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/org.eclipse.ant.core_3.7.400.v20240413-1529.jar
 file:/nix/store/4nq44mmhzh50bna740cdhmmshw22i07g-eclipse-modeling-4.33/eclipse/plugins/org.eclipse.ant.launching_1.4.500.v20240613-1053.jar

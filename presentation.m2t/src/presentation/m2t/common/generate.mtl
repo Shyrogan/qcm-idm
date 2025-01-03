@@ -1,0 +1,173 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/presentation')]
+
+[template public generateHTML(p : Presentation)]
+[comment @main/]
+[file ('quiz.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>[p.titre/]</title>
+   <style>
+       body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; }
+       .page { display: none; background: white; padding: 20px; border-radius: 8px; 
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 50px auto; width: 50%; }
+       .active { display: block; }
+       .result-question { margin: 20px 0; padding: 15px; border-radius: 5px; }
+       .correct-answer { background-color: #d4edda; border: 1px solid #c3e6cb; }
+       .incorrect-answer { background-color: #f8d7da; border: 1px solid #f5c6cb; }
+       .finish-page { display: none; background: white; padding: 20px; border-radius: 8px; 
+                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 50px auto; width: 80%; }
+	   .checkmark {
+           color: #28a745;
+           margin-left: 10px;
+           font-weight: bold;
+       }
+		.question-info { 
+		    margin: 10px 0; 
+		    font-style: italic; 
+		    color: #666;
+		}
+		.difficulty {
+		    margin-right: 20px;
+		}
+   </style>
+   <script>
+       let currentPage = 0;
+       let answers = new Map();
+       let answersHistory = new Map();
+       let totalQuestions = 0;
+       let retourAutorise = [p.retourAutorise/];
+
+       function showPage(index) {
+           let pages = document.querySelectorAll('.page');
+           let finishPage = document.getElementById('finish-page');
+           
+           if (index >= pages.length) {
+               pages.forEach(p => p.style.display = 'none');
+               finishPage.style.display = 'block'; 
+               document.querySelector('.pagination').style.display = 'none';
+               calculateAndDisplayResults();
+           } else {
+               pages.forEach(p => p.classList.remove('active'));
+               let page = pages.item(index);
+               if (page) {
+                   page.classList.add('active');
+                   currentPage = index;
+                   updateNavIcons();
+                   document.getElementById('page-number').textContent = `${currentPage + 1} / ${totalQuestions}`;
+               }
+           }
+       }
+
+       function validateAnswer() {
+           let currentInputs = document.querySelector('.active').querySelectorAll('input');
+           let answeredCorrectly = true;
+           let hasCheckedCorrect = false;
+           
+           currentInputs.forEach(input => {
+               if (input.checked) {
+                   if (input.getAttribute('data-correct') !== 'true') {
+                       answeredCorrectly = false;
+                   } else {
+                       hasCheckedCorrect = true;
+                   }
+               } else if (input.getAttribute('data-correct') === 'true') {
+                   answeredCorrectly = false;
+               }
+           });
+           
+           answers.set(currentPage, answeredCorrectly && hasCheckedCorrect);
+           answersHistory.set(currentPage, Array.from(currentInputs).map(input => input.checked));
+           showPage(currentPage + 1);
+       }
+
+       function calculateAndDisplayResults() {
+           let score = 0;
+           answers.forEach((isCorrect) => {
+               if (isCorrect) score++;
+           });
+
+           document.getElementById('final-score').textContent = `Score final : ${score} / ${totalQuestions}`;
+           
+           const resultContainer = document.getElementById('results-container');
+           resultContainer.innerHTML = '';
+           
+           for (let i = 0; i < totalQuestions; i++) {
+               const template = document.querySelector(`#question-template-${i+1}`);
+               if (template) {
+                   const questionElement = template.cloneNode(true);
+                   questionElement.classList.add(answers.get(i) ? 'correct-answer' : 'incorrect-answer');
+                   questionElement.style.display = 'block';
+                   resultContainer.appendChild(questionElement);
+               }
+           }
+       }
+
+       function updateNavIcons() {
+           let prevArrow = document.getElementById('prev-arrow');
+           let nextArrow = document.getElementById('next-arrow');
+           prevArrow.style.display = (!retourAutorise || currentPage <= 0) ? 'none' : 'inline';
+           nextArrow.style.display = (currentPage >= totalQuestions - 1) ? 'none' : 'inline';
+       }
+
+       document.addEventListener("DOMContentLoaded", () => {
+           totalQuestions = document.querySelectorAll('.page').length;
+           showPage(0);
+       });
+   </script>
+</head>
+<body>
+   <h1>[p.titre/]</h1>
+   [for (page : Page | p.pages)]
+	<div class="page">
+	   <h2>Question [page.numero/]</h2>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: [page.question.niveauDifficulte/]/4</span>
+	       <span class="categories">
+	           Thèmes: [for (cat : CategorieQuestion | page.question.categories) separator(', ')][cat.nom/][/for]
+	       </span>
+	   </div>
+	   <p>[page.question.intitule/]</p>
+	   [for (r : ReponseProposee | page.question.reponsesPossibles)]
+	   <input type="[if (page.question.choixMultiple)]checkbox[else]radio[/if]" 
+	          name="q-page-[page.numero/]" 
+	          data-correct="[r.estCorrecte/]">
+	   [r.texte/]<br>
+	   [/for]
+	   <button onclick="validateAnswer()">Valider</button>
+	</div>
+	
+	<div id="question-template-[page.numero/]" style="display: none;">
+	   <h3>Question [page.numero/]</h3>
+	   <div class="question-info">
+	       <span class="difficulty">Difficulté: [page.question.niveauDifficulte/]/5</span>
+	       <span class="categories">
+	           Thèmes: [for (cat : CategorieQuestion | page.question.categories) separator(', ')][cat.nom/][/for]
+	       </span>
+	   </div>
+	   <p>[page.question.intitule/]</p>
+	   [for (r : ReponseProposee | page.question.reponsesPossibles)]
+	   <div class="[if (r.estCorrecte)]correct[else]incorrect[/if]">
+	       [r.texte/][if (r.estCorrecte)]<span class="checkmark">✓</span>[/if]
+	   </div>
+	   [/for]
+	</div>
+	[/for]
+   
+   <div id="finish-page" class="finish-page">
+       <h2>QCM Terminé</h2>
+       <p id="final-score"></p>
+       <div id="results-container"></div>
+   </div>
+   
+   <div class="pagination">
+       <span id="prev-arrow" class="nav-icons" onclick="showPage(currentPage - 1)">⬅</span>
+       <span id="page-number"></span>
+       <span id="next-arrow" class="nav-icons" onclick="showPage(currentPage + 1)">➡</span>
+   </div>
+</body>
+</html>
+[/file]
+[/template]
