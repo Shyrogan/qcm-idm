@@ -167,22 +167,13 @@ public interface QcmPackage extends EPackage {
 	int QUESTION__DIFFICULTE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Question Suivante</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTION__QUESTION_SUIVANTE = 3;
-
-	/**
 	 * The feature id for the '<em><b>Reponses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__REPONSES = 4;
+	int QUESTION__REPONSES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Etiquette</b></em>' containment reference list.
@@ -191,7 +182,7 @@ public interface QcmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__ETIQUETTE = 5;
+	int QUESTION__ETIQUETTE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Question</em>' class.
@@ -200,7 +191,7 @@ public interface QcmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_FEATURE_COUNT = 6;
+	int QUESTION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Question</em>' class.
@@ -421,17 +412,6 @@ public interface QcmPackage extends EPackage {
 	EAttribute getQuestion_Difficulte();
 
 	/**
-	 * Returns the meta object for the reference '{@link qcm.Question#getQuestionSuivante <em>Question Suivante</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Question Suivante</em>'.
-	 * @see qcm.Question#getQuestionSuivante()
-	 * @see #getQuestion()
-	 * @generated
-	 */
-	EReference getQuestion_QuestionSuivante();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link qcm.Question#getReponses <em>Reponses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,13 +605,6 @@ public interface QcmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute QUESTION__DIFFICULTE = eINSTANCE.getQuestion_Difficulte();
-		/**
-		 * The meta object literal for the '<em><b>Question Suivante</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference QUESTION__QUESTION_SUIVANTE = eINSTANCE.getQuestion_QuestionSuivante();
 		/**
 		 * The meta object literal for the '<em><b>Reponses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->

@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link qcm.Question#getIntitule <em>Intitule</em>}</li>
  *   <li>{@link qcm.Question#isReponseUnique <em>Reponse Unique</em>}</li>
  *   <li>{@link qcm.Question#getDifficulte <em>Difficulte</em>}</li>
- *   <li>{@link qcm.Question#getQuestionSuivante <em>Question Suivante</em>}</li>
  *   <li>{@link qcm.Question#getReponses <em>Reponses</em>}</li>
  *   <li>{@link qcm.Question#getEtiquette <em>Etiquette</em>}</li>
  * </ul>
@@ -58,7 +57,7 @@ public interface Question extends EObject {
 	 * @return the value of the '<em>Reponse Unique</em>' attribute.
 	 * @see #setReponseUnique(boolean)
 	 * @see qcm.QcmPackage#getQuestion_ReponseUnique()
-	 * @model default="false" required="true"
+	 * @model default="false" required="true" derived="true"
 	 * @generated
 	 */
 	boolean isReponseUnique();
@@ -95,28 +94,6 @@ public interface Question extends EObject {
 	 * @generated
 	 */
 	void setDifficulte(long value);
-
-	/**
-	 * Returns the value of the '<em><b>Question Suivante</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Question Suivante</em>' reference.
-	 * @see #setQuestionSuivante(Question)
-	 * @see qcm.QcmPackage#getQuestion_QuestionSuivante()
-	 * @model
-	 * @generated
-	 */
-	Question getQuestionSuivante();
-
-	/**
-	 * Sets the value of the '{@link qcm.Question#getQuestionSuivante <em>Question Suivante</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Question Suivante</em>' reference.
-	 * @see #getQuestionSuivante()
-	 * @generated
-	 */
-	void setQuestionSuivante(Question value);
 
 	/**
 	 * Returns the value of the '<em><b>Reponses</b></em>' containment reference list.

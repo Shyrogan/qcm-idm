@@ -5,7 +5,7 @@
     <semanticResources>qcm.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_SMhAMK2KEe-D1Jti-DzEXg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_SNiT4K2KEe-D1Jti-DzEXg" name="qcm" repPath="#_SNQnEK2KEe-D1Jti-DzEXg" changeId="1735846193324">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_SNiT4K2KEe-D1Jti-DzEXg" name="qcm" repPath="#_SNQnEK2KEe-D1Jti-DzEXg" changeId="1736003819334">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="qcm.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -247,10 +247,10 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_X-7_4K2MEe-D1Jti-DzEXg" name="reponseUnique : EBoolean = false" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_X-7_4K2MEe-D1Jti-DzEXg" name="/reponseUnique : EBoolean = false" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="qcm.ecore#//Question/reponseUnique"/>
         <semanticElements xmi:type="ecore:EAttribute" href="qcm.ecore#//Question/reponseUnique"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_WFgeArpOEe-eevMfOlAgZQ" labelAlignment="LEFT" description="_10YbEK2LEe-D1Jti-DzEXg">
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_8U0l4squEe-oRZcRxeVKlg" labelColor="39,76,114" labelAlignment="LEFT" description="__VCR8a2LEe-D1Jti-DzEXg">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>

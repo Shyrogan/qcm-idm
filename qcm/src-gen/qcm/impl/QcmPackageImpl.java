@@ -218,7 +218,7 @@ public class QcmPackageImpl extends EPackageImpl implements QcmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQuestion_QuestionSuivante() {
+	public EReference getQuestion_Reponses() {
 		return (EReference) questionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -228,18 +228,8 @@ public class QcmPackageImpl extends EPackageImpl implements QcmPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQuestion_Reponses() {
-		return (EReference) questionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getQuestion_Etiquette() {
-		return (EReference) questionEClass.getEStructuralFeatures().get(5);
+		return (EReference) questionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -353,7 +343,6 @@ public class QcmPackageImpl extends EPackageImpl implements QcmPackage {
 		createEAttribute(questionEClass, QUESTION__INTITULE);
 		createEAttribute(questionEClass, QUESTION__REPONSE_UNIQUE);
 		createEAttribute(questionEClass, QUESTION__DIFFICULTE);
-		createEReference(questionEClass, QUESTION__QUESTION_SUIVANTE);
 		createEReference(questionEClass, QUESTION__REPONSES);
 		createEReference(questionEClass, QUESTION__ETIQUETTE);
 
@@ -421,12 +410,9 @@ public class QcmPackageImpl extends EPackageImpl implements QcmPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuestion_ReponseUnique(), ecorePackage.getEBoolean(), "reponseUnique", "false", 1, 1,
 				Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+				IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuestion_Difficulte(), ecorePackage.getELong(), "difficulte", "1", 1, 1, Question.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuestion_QuestionSuivante(), this.getQuestion(), null, "questionSuivante", null, 0, 1,
-				Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuestion_Reponses(), this.getReponse(), null, "reponses", null, 1, -1, Question.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

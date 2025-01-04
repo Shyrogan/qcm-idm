@@ -35,7 +35,6 @@ import qcm.Reponse;
  *   <li>{@link qcm.impl.QuestionImpl#getIntitule <em>Intitule</em>}</li>
  *   <li>{@link qcm.impl.QuestionImpl#isReponseUnique <em>Reponse Unique</em>}</li>
  *   <li>{@link qcm.impl.QuestionImpl#getDifficulte <em>Difficulte</em>}</li>
- *   <li>{@link qcm.impl.QuestionImpl#getQuestionSuivante <em>Question Suivante</em>}</li>
  *   <li>{@link qcm.impl.QuestionImpl#getReponses <em>Reponses</em>}</li>
  *   <li>{@link qcm.impl.QuestionImpl#getEtiquette <em>Etiquette</em>}</li>
  * </ul>
@@ -102,16 +101,6 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * @ordered
 	 */
 	protected long difficulte = DIFFICULTE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getQuestionSuivante() <em>Question Suivante</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQuestionSuivante()
-	 * @generated
-	 * @ordered
-	 */
-	protected Question questionSuivante;
 
 	/**
 	 * The cached value of the '{@link #getReponses() <em>Reponses</em>}' containment reference list.
@@ -230,48 +219,6 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 	 * @generated
 	 */
 	@Override
-	public Question getQuestionSuivante() {
-		if (questionSuivante != null && questionSuivante.eIsProxy()) {
-			InternalEObject oldQuestionSuivante = (InternalEObject) questionSuivante;
-			questionSuivante = (Question) eResolveProxy(oldQuestionSuivante);
-			if (questionSuivante != oldQuestionSuivante) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QcmPackage.QUESTION__QUESTION_SUIVANTE,
-							oldQuestionSuivante, questionSuivante));
-			}
-		}
-		return questionSuivante;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Question basicGetQuestionSuivante() {
-		return questionSuivante;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setQuestionSuivante(Question newQuestionSuivante) {
-		Question oldQuestionSuivante = questionSuivante;
-		questionSuivante = newQuestionSuivante;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QcmPackage.QUESTION__QUESTION_SUIVANTE,
-					oldQuestionSuivante, questionSuivante));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Reponse> getReponses() {
 		if (reponses == null) {
 			reponses = new EObjectContainmentEList<Reponse>(Reponse.class, this, QcmPackage.QUESTION__REPONSES);
@@ -338,10 +285,6 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 			return isReponseUnique();
 		case QcmPackage.QUESTION__DIFFICULTE:
 			return getDifficulte();
-		case QcmPackage.QUESTION__QUESTION_SUIVANTE:
-			if (resolve)
-				return getQuestionSuivante();
-			return basicGetQuestionSuivante();
 		case QcmPackage.QUESTION__REPONSES:
 			return getReponses();
 		case QcmPackage.QUESTION__ETIQUETTE:
@@ -367,9 +310,6 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 			return;
 		case QcmPackage.QUESTION__DIFFICULTE:
 			setDifficulte((Long) newValue);
-			return;
-		case QcmPackage.QUESTION__QUESTION_SUIVANTE:
-			setQuestionSuivante((Question) newValue);
 			return;
 		case QcmPackage.QUESTION__REPONSES:
 			getReponses().clear();
@@ -400,9 +340,6 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 		case QcmPackage.QUESTION__DIFFICULTE:
 			setDifficulte(DIFFICULTE_EDEFAULT);
 			return;
-		case QcmPackage.QUESTION__QUESTION_SUIVANTE:
-			setQuestionSuivante((Question) null);
-			return;
 		case QcmPackage.QUESTION__REPONSES:
 			getReponses().clear();
 			return;
@@ -427,8 +364,6 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
 			return reponseUnique != REPONSE_UNIQUE_EDEFAULT;
 		case QcmPackage.QUESTION__DIFFICULTE:
 			return difficulte != DIFFICULTE_EDEFAULT;
-		case QcmPackage.QUESTION__QUESTION_SUIVANTE:
-			return questionSuivante != null;
 		case QcmPackage.QUESTION__REPONSES:
 			return reponses != null && !reponses.isEmpty();
 		case QcmPackage.QUESTION__ETIQUETTE:

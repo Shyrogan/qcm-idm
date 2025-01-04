@@ -203,7 +203,7 @@
        let answers = new Map();
        let answersHistory = new Map();
        let totalQuestions = 0;
-       let retourAutorise = true;
+       let retourAutorise = false;
 
 		function showPage(index) {
 		    let pages = document.querySelectorAll('.page');
@@ -338,33 +338,33 @@
        <div class="question-info">
            <span class="difficulty">Difficulté: 
                
+               ⭐⭐
                
                
-               ⭐⭐⭐⭐
                
            </span>
            <span class="categories">
-               Thèmes: Informatique, Histoire
+               Thèmes: Littérature, Culture
            </span>
        </div>
-       <p>En quelle année a été créé le World Wide Web?</p>
+       <p>Quel est l'auteur de 'Les Misérables'?</p>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-1" 
                   data-correct="true">
-           1989
+           Victor Hugo
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-1" 
                   data-correct="false">
-           1995
+           Émile Zola
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-1" 
                   data-correct="false">
-           1983
+           Albert Camus
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
@@ -372,20 +372,20 @@
    <div id="question-template-1" style="display: none;">
        <h3>Question 1</h3>
        <div class="question-info">
-           <span class="difficulty">Difficulté: 4/5</span>
+           <span class="difficulty">Difficulté: 2/5</span>
            <span class="categories">
-               Thèmes: Informatique, Histoire
+               Thèmes: Littérature, Culture
            </span>
        </div>
-       <p>En quelle année a été créé le World Wide Web?</p>
+       <p>Quel est l'auteur de 'Les Misérables'?</p>
        <div class="response-element" data-correct="true">
-           1989
+           Victor Hugo
        </div>
        <div class="response-element" data-correct="false">
-           1995
+           Émile Zola
        </div>
        <div class="response-element" data-correct="false">
-           1983
+           Albert Camus
        </div>
    </div>
    <div class="page">
@@ -399,27 +399,33 @@
                
            </span>
            <span class="categories">
-               Thèmes: Informatique, Programmation
+               Thèmes: Science, Astronomie
            </span>
        </div>
-       <p>Quel est le langage principal utilisé pour le développement d'applications Android?</p>
+       <p>Quels sont les éléments chimiques les plus abondants dans l'univers?</p>
        <label class="response-element">
-           <input class="quiz-input" type="radio" 
+           <input class="quiz-input" type="checkbox" 
                   name="q-page-2" 
                   data-correct="true">
-           Kotlin
+           Hydrogène
        </label>
        <label class="response-element">
-           <input class="quiz-input" type="radio" 
+           <input class="quiz-input" type="checkbox" 
                   name="q-page-2" 
-                  data-correct="false">
-           Swift
+                  data-correct="true">
+           Hélium
        </label>
        <label class="response-element">
-           <input class="quiz-input" type="radio" 
+           <input class="quiz-input" type="checkbox" 
                   name="q-page-2" 
                   data-correct="false">
-           JavaScript
+           Carbone
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="checkbox" 
+                  name="q-page-2" 
+                  data-correct="false">
+           Oxygène
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
@@ -429,18 +435,21 @@
        <div class="question-info">
            <span class="difficulty">Difficulté: 3/5</span>
            <span class="categories">
-               Thèmes: Informatique, Programmation
+               Thèmes: Science, Astronomie
            </span>
        </div>
-       <p>Quel est le langage principal utilisé pour le développement d'applications Android?</p>
+       <p>Quels sont les éléments chimiques les plus abondants dans l'univers?</p>
        <div class="response-element" data-correct="true">
-           Kotlin
+           Hydrogène
+       </div>
+       <div class="response-element" data-correct="true">
+           Hélium
        </div>
        <div class="response-element" data-correct="false">
-           Swift
+           Carbone
        </div>
        <div class="response-element" data-correct="false">
-           JavaScript
+           Oxygène
        </div>
    </div>
    <div class="page">
@@ -449,38 +458,32 @@
            <span class="difficulty">Difficulté: 
                
                
-               ⭐⭐⭐
                
+               ⭐⭐⭐⭐
                
            </span>
            <span class="categories">
-               Thèmes: Astronomie, Science
+               Thèmes: Informatique, Histoire
            </span>
        </div>
-       <p>Quelles planètes sont des géantes gazeuses?</p>
+       <p>En quelle année a été créé le World Wide Web?</p>
        <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
+           <input class="quiz-input" type="radio" 
                   name="q-page-3" 
                   data-correct="true">
-           Jupiter
+           1989
        </label>
        <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
-                  name="q-page-3" 
-                  data-correct="true">
-           Saturne
-       </label>
-       <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
+           <input class="quiz-input" type="radio" 
                   name="q-page-3" 
                   data-correct="false">
-           Mars
+           1995
        </label>
        <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
+           <input class="quiz-input" type="radio" 
                   name="q-page-3" 
-                  data-correct="true">
-           Uranus
+                  data-correct="false">
+           1983
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
@@ -488,91 +491,24 @@
    <div id="question-template-3" style="display: none;">
        <h3>Question 3</h3>
        <div class="question-info">
-           <span class="difficulty">Difficulté: 3/5</span>
+           <span class="difficulty">Difficulté: 4/5</span>
            <span class="categories">
-               Thèmes: Astronomie, Science
+               Thèmes: Informatique, Histoire
            </span>
        </div>
-       <p>Quelles planètes sont des géantes gazeuses?</p>
+       <p>En quelle année a été créé le World Wide Web?</p>
        <div class="response-element" data-correct="true">
-           Jupiter
-       </div>
-       <div class="response-element" data-correct="true">
-           Saturne
+           1989
        </div>
        <div class="response-element" data-correct="false">
-           Mars
+           1995
        </div>
-       <div class="response-element" data-correct="true">
-           Uranus
+       <div class="response-element" data-correct="false">
+           1983
        </div>
    </div>
    <div class="page">
        <h2>Question 4</h2>
-       <div class="question-info">
-           <span class="difficulty">Difficulté: 
-               
-               
-               ⭐⭐⭐
-               
-               
-           </span>
-           <span class="categories">
-               Thèmes: Science, Astronomie
-           </span>
-       </div>
-       <p>Quels sont les éléments chimiques les plus abondants dans l'univers?</p>
-       <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
-                  name="q-page-4" 
-                  data-correct="true">
-           Hydrogène
-       </label>
-       <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
-                  name="q-page-4" 
-                  data-correct="true">
-           Hélium
-       </label>
-       <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
-                  name="q-page-4" 
-                  data-correct="false">
-           Carbone
-       </label>
-       <label class="response-element">
-           <input class="quiz-input" type="checkbox" 
-                  name="q-page-4" 
-                  data-correct="false">
-           Oxygène
-       </label>
-       <button onclick="validateAnswer()">Valider</button>
-   </div>
-   
-   <div id="question-template-4" style="display: none;">
-       <h3>Question 4</h3>
-       <div class="question-info">
-           <span class="difficulty">Difficulté: 3/5</span>
-           <span class="categories">
-               Thèmes: Science, Astronomie
-           </span>
-       </div>
-       <p>Quels sont les éléments chimiques les plus abondants dans l'univers?</p>
-       <div class="response-element" data-correct="true">
-           Hydrogène
-       </div>
-       <div class="response-element" data-correct="true">
-           Hélium
-       </div>
-       <div class="response-element" data-correct="false">
-           Carbone
-       </div>
-       <div class="response-element" data-correct="false">
-           Oxygène
-       </div>
-   </div>
-   <div class="page">
-       <h2>Question 5</h2>
        <div class="question-info">
            <span class="difficulty">Difficulté: 
                
@@ -582,52 +518,52 @@
                
            </span>
            <span class="categories">
-               Thèmes: Littérature, Culture
+               Thèmes: Géographie, Monde
            </span>
        </div>
-       <p>Quel est l'auteur de 'Les Misérables'?</p>
+       <p>Quel pays est le plus grand en superficie?</p>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
-                  name="q-page-5" 
+                  name="q-page-4" 
                   data-correct="true">
-           Victor Hugo
+           Russie
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
-                  name="q-page-5" 
+                  name="q-page-4" 
                   data-correct="false">
-           Émile Zola
+           Canada
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
-                  name="q-page-5" 
+                  name="q-page-4" 
                   data-correct="false">
-           Albert Camus
+           Chine
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
    
-   <div id="question-template-5" style="display: none;">
-       <h3>Question 5</h3>
+   <div id="question-template-4" style="display: none;">
+       <h3>Question 4</h3>
        <div class="question-info">
            <span class="difficulty">Difficulté: 2/5</span>
            <span class="categories">
-               Thèmes: Littérature, Culture
+               Thèmes: Géographie, Monde
            </span>
        </div>
-       <p>Quel est l'auteur de 'Les Misérables'?</p>
+       <p>Quel pays est le plus grand en superficie?</p>
        <div class="response-element" data-correct="true">
-           Victor Hugo
+           Russie
        </div>
        <div class="response-element" data-correct="false">
-           Émile Zola
+           Canada
        </div>
        <div class="response-element" data-correct="false">
-           Albert Camus
+           Chine
        </div>
    </div>
    <div class="page">
-       <h2>Question 6</h2>
+       <h2>Question 5</h2>
        <div class="question-info">
            <span class="difficulty">Difficulté: 
                
@@ -643,27 +579,27 @@
        <p>Quel était le premier navigateur web de l'histoire?</p>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
-                  name="q-page-6" 
+                  name="q-page-5" 
                   data-correct="true">
            WorldWideWeb
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
-                  name="q-page-6" 
+                  name="q-page-5" 
                   data-correct="false">
            Netscape Navigator
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
-                  name="q-page-6" 
+                  name="q-page-5" 
                   data-correct="false">
            Internet Explorer
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
    
-   <div id="question-template-6" style="display: none;">
-       <h3>Question 6</h3>
+   <div id="question-template-5" style="display: none;">
+       <h3>Question 5</h3>
        <div class="question-info">
            <span class="difficulty">Difficulté: 4/5</span>
            <span class="categories">
@@ -682,37 +618,98 @@
        </div>
    </div>
    <div class="page">
-       <h2>Question 7</h2>
+       <h2>Question 6</h2>
        <div class="question-info">
            <span class="difficulty">Difficulté: 
+               ⭐
                
-               ⭐⭐
                
                
                
            </span>
            <span class="categories">
-               Thèmes: Littérature, Culture
+               Thèmes: Géographie, Europe
            </span>
        </div>
-       <p>Qui a écrit 'Le Rouge et le Noir'?</p>
+       <p>Quelle est la capitale de la France?</p>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
+                  name="q-page-6" 
+                  data-correct="true">
+           Paris
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-6" 
+                  data-correct="false">
+           Lyon
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-6" 
+                  data-correct="false">
+           Marseille
+       </label>
+       <button onclick="validateAnswer()">Valider</button>
+   </div>
+   
+   <div id="question-template-6" style="display: none;">
+       <h3>Question 6</h3>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 1/5</span>
+           <span class="categories">
+               Thèmes: Géographie, Europe
+           </span>
+       </div>
+       <p>Quelle est la capitale de la France?</p>
+       <div class="response-element" data-correct="true">
+           Paris
+       </div>
+       <div class="response-element" data-correct="false">
+           Lyon
+       </div>
+       <div class="response-element" data-correct="false">
+           Marseille
+       </div>
+   </div>
+   <div class="page">
+       <h2>Question 7</h2>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 
+               
+               
+               ⭐⭐⭐
+               
+               
+           </span>
+           <span class="categories">
+               Thèmes: Astronomie, Science
+           </span>
+       </div>
+       <p>Quelles planètes sont des géantes gazeuses?</p>
+       <label class="response-element">
+           <input class="quiz-input" type="checkbox" 
                   name="q-page-7" 
                   data-correct="true">
-           Stendhal
+           Jupiter
        </label>
        <label class="response-element">
-           <input class="quiz-input" type="radio" 
+           <input class="quiz-input" type="checkbox" 
                   name="q-page-7" 
-                  data-correct="false">
-           Gustave Flaubert
+                  data-correct="true">
+           Saturne
        </label>
        <label class="response-element">
-           <input class="quiz-input" type="radio" 
+           <input class="quiz-input" type="checkbox" 
                   name="q-page-7" 
                   data-correct="false">
-           Honoré de Balzac
+           Mars
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="checkbox" 
+                  name="q-page-7" 
+                  data-correct="true">
+           Uranus
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
@@ -720,20 +717,23 @@
    <div id="question-template-7" style="display: none;">
        <h3>Question 7</h3>
        <div class="question-info">
-           <span class="difficulty">Difficulté: 2/5</span>
+           <span class="difficulty">Difficulté: 3/5</span>
            <span class="categories">
-               Thèmes: Littérature, Culture
+               Thèmes: Astronomie, Science
            </span>
        </div>
-       <p>Qui a écrit 'Le Rouge et le Noir'?</p>
+       <p>Quelles planètes sont des géantes gazeuses?</p>
        <div class="response-element" data-correct="true">
-           Stendhal
+           Jupiter
+       </div>
+       <div class="response-element" data-correct="true">
+           Saturne
        </div>
        <div class="response-element" data-correct="false">
-           Gustave Flaubert
+           Mars
        </div>
-       <div class="response-element" data-correct="false">
-           Honoré de Balzac
+       <div class="response-element" data-correct="true">
+           Uranus
        </div>
    </div>
    <div class="page">
@@ -741,33 +741,33 @@
        <div class="question-info">
            <span class="difficulty">Difficulté: 
                
-               ⭐⭐
                
+               ⭐⭐⭐
                
                
            </span>
            <span class="categories">
-               Thèmes: Géographie, Monde
+               Thèmes: Informatique, Programmation
            </span>
        </div>
-       <p>Quel pays est le plus grand en superficie?</p>
+       <p>Quel est le langage principal utilisé pour le développement d'applications Android?</p>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-8" 
                   data-correct="true">
-           Russie
+           Kotlin
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-8" 
                   data-correct="false">
-           Canada
+           Swift
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-8" 
                   data-correct="false">
-           Chine
+           JavaScript
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
@@ -775,20 +775,20 @@
    <div id="question-template-8" style="display: none;">
        <h3>Question 8</h3>
        <div class="question-info">
-           <span class="difficulty">Difficulté: 2/5</span>
+           <span class="difficulty">Difficulté: 3/5</span>
            <span class="categories">
-               Thèmes: Géographie, Monde
+               Thèmes: Informatique, Programmation
            </span>
        </div>
-       <p>Quel pays est le plus grand en superficie?</p>
+       <p>Quel est le langage principal utilisé pour le développement d'applications Android?</p>
        <div class="response-element" data-correct="true">
-           Russie
+           Kotlin
        </div>
        <div class="response-element" data-correct="false">
-           Canada
+           Swift
        </div>
        <div class="response-element" data-correct="false">
-           Chine
+           JavaScript
        </div>
    </div>
    <div class="page">
@@ -859,34 +859,34 @@
        <h2>Question 10</h2>
        <div class="question-info">
            <span class="difficulty">Difficulté: 
-               ⭐
                
+               ⭐⭐
                
                
                
            </span>
            <span class="categories">
-               Thèmes: Géographie, Europe
+               Thèmes: Littérature, Culture
            </span>
        </div>
-       <p>Quelle est la capitale de la France?</p>
+       <p>Qui a écrit 'Le Rouge et le Noir'?</p>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-10" 
                   data-correct="true">
-           Paris
+           Stendhal
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-10" 
                   data-correct="false">
-           Lyon
+           Gustave Flaubert
        </label>
        <label class="response-element">
            <input class="quiz-input" type="radio" 
                   name="q-page-10" 
                   data-correct="false">
-           Marseille
+           Honoré de Balzac
        </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
@@ -894,20 +894,20 @@
    <div id="question-template-10" style="display: none;">
        <h3>Question 10</h3>
        <div class="question-info">
-           <span class="difficulty">Difficulté: 1/5</span>
+           <span class="difficulty">Difficulté: 2/5</span>
            <span class="categories">
-               Thèmes: Géographie, Europe
+               Thèmes: Littérature, Culture
            </span>
        </div>
-       <p>Quelle est la capitale de la France?</p>
+       <p>Qui a écrit 'Le Rouge et le Noir'?</p>
        <div class="response-element" data-correct="true">
-           Paris
+           Stendhal
        </div>
        <div class="response-element" data-correct="false">
-           Lyon
+           Gustave Flaubert
        </div>
        <div class="response-element" data-correct="false">
-           Marseille
+           Honoré de Balzac
        </div>
    </div>
    

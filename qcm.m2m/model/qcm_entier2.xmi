@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ASCII"?>
+<presentation:Presentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:presentation="http://www.example.org/presentation" titre="Quiz de Culture G&#xe9;n&#xe9;rale">
+  <pages numero="1" pageSuivante="//@pages.1">
+    <question categories="//@categoriesSelectionnees.0 //@categoriesSelectionnees.1" intitule="Quel est l'auteur de 'Les Mis&#xe9;rables'?" niveauDifficulte="2">
+      <reponsesPossibles texte="Victor Hugo" estCorrecte="true"/>
+      <reponsesPossibles texte="&#xc9;mile Zola"/>
+      <reponsesPossibles texte="Albert Camus"/>
+    </question>
+  </pages>
+  <pages numero="2" pageSuivante="//@pages.2" pagePrecedente="//@pages.0">
+    <question categories="//@categoriesSelectionnees.2 //@categoriesSelectionnees.3" intitule="Quels sont les &#xe9;l&#xe9;ments chimiques les plus abondants dans l'univers?" niveauDifficulte="3" choixMultiple="true">
+      <reponsesPossibles texte="Hydrog&#xe8;ne" estCorrecte="true"/>
+      <reponsesPossibles texte="H&#xe9;lium" estCorrecte="true"/>
+      <reponsesPossibles texte="Carbone"/>
+      <reponsesPossibles texte="Oxyg&#xe8;ne"/>
+    </question>
+  </pages>
+  <pages numero="3" pageSuivante="//@pages.3" pagePrecedente="//@pages.1">
+    <question categories="//@categoriesSelectionnees.4 //@categoriesSelectionnees.5" intitule="En quelle ann&#xe9;e a &#xe9;t&#xe9; cr&#xe9;&#xe9; le World Wide Web?" niveauDifficulte="4">
+      <reponsesPossibles texte="1989" estCorrecte="true"/>
+      <reponsesPossibles texte="1995"/>
+      <reponsesPossibles texte="1983"/>
+    </question>
+  </pages>
+  <pages numero="4" pageSuivante="//@pages.4" pagePrecedente="//@pages.2">
+    <question categories="//@categoriesSelectionnees.6 //@categoriesSelectionnees.7" intitule="Quel pays est le plus grand en superficie?" niveauDifficulte="2">
+      <reponsesPossibles texte="Russie" estCorrecte="true"/>
+      <reponsesPossibles texte="Canada"/>
+      <reponsesPossibles texte="Chine"/>
+    </question>
+  </pages>
+  <pages numero="5" pageSuivante="//@pages.5" pagePrecedente="//@pages.3">
+    <question categories="//@categoriesSelectionnees.4 //@categoriesSelectionnees.5" intitule="Quel &#xe9;tait le premier navigateur web de l'histoire?" niveauDifficulte="4">
+      <reponsesPossibles texte="WorldWideWeb" estCorrecte="true"/>
+      <reponsesPossibles texte="Netscape Navigator"/>
+      <reponsesPossibles texte="Internet Explorer"/>
+    </question>
+  </pages>
+  <pages numero="6" pageSuivante="//@pages.6" pagePrecedente="//@pages.4">
+    <question categories="//@categoriesSelectionnees.6 //@categoriesSelectionnees.8" intitule="Quelle est la capitale de la France?" niveauDifficulte="1">
+      <reponsesPossibles texte="Paris" estCorrecte="true"/>
+      <reponsesPossibles texte="Lyon"/>
+      <reponsesPossibles texte="Marseille"/>
+    </question>
+  </pages>
+  <pages numero="7" pageSuivante="//@pages.7" pagePrecedente="//@pages.5">
+    <question categories="//@categoriesSelectionnees.3 //@categoriesSelectionnees.2" intitule="Quelles plan&#xe8;tes sont des g&#xe9;antes gazeuses?" niveauDifficulte="3" choixMultiple="true">
+      <reponsesPossibles texte="Jupiter" estCorrecte="true"/>
+      <reponsesPossibles texte="Saturne" estCorrecte="true"/>
+      <reponsesPossibles texte="Mars"/>
+      <reponsesPossibles texte="Uranus" estCorrecte="true"/>
+    </question>
+  </pages>
+  <pages numero="8" pageSuivante="//@pages.8" pagePrecedente="//@pages.6">
+    <question categories="//@categoriesSelectionnees.4 //@categoriesSelectionnees.9" intitule="Quel est le langage principal utilis&#xe9; pour le d&#xe9;veloppement d'applications Android?" niveauDifficulte="3">
+      <reponsesPossibles texte="Kotlin" estCorrecte="true"/>
+      <reponsesPossibles texte="Swift"/>
+      <reponsesPossibles texte="JavaScript"/>
+    </question>
+  </pages>
+  <pages numero="9" pageSuivante="//@pages.9" pagePrecedente="//@pages.7">
+    <question categories="//@categoriesSelectionnees.4 //@categoriesSelectionnees.9" intitule="Quels sont les langages de programmation orient&#xe9;s objet parmi les suivants?" niveauDifficulte="3" choixMultiple="true">
+      <reponsesPossibles texte="Java" estCorrecte="true"/>
+      <reponsesPossibles texte="Python" estCorrecte="true"/>
+      <reponsesPossibles texte="C"/>
+      <reponsesPossibles texte="C++" estCorrecte="true"/>
+    </question>
+  </pages>
+  <pages numero="10" pagePrecedente="//@pages.8">
+    <question categories="//@categoriesSelectionnees.0 //@categoriesSelectionnees.1" intitule="Qui a &#xe9;crit 'Le Rouge et le Noir'?" niveauDifficulte="2">
+      <reponsesPossibles texte="Stendhal" estCorrecte="true"/>
+      <reponsesPossibles texte="Gustave Flaubert"/>
+      <reponsesPossibles texte="Honor&#xe9; de Balzac"/>
+    </question>
+  </pages>
+  <categoriesSelectionnees nom="Litt&#xe9;rature"/>
+  <categoriesSelectionnees nom="Culture"/>
+  <categoriesSelectionnees nom="Science"/>
+  <categoriesSelectionnees nom="Astronomie"/>
+  <categoriesSelectionnees nom="Informatique"/>
+  <categoriesSelectionnees nom="Histoire"/>
+  <categoriesSelectionnees nom="G&#xe9;ographie"/>
+  <categoriesSelectionnees nom="Monde"/>
+  <categoriesSelectionnees nom="Europe"/>
+  <categoriesSelectionnees nom="Programmation"/>
+</presentation:Presentation>
