@@ -121,6 +121,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @generated
      */
     public static void main(String[] args) {
+    	EPackage.Registry.INSTANCE.put("http://www.example.org/presentation", PresentationPackage.eINSTANCE);
         try {
             if (args.length < 2) {
                 System.out.println("Arguments not valid : {model, folder}.");

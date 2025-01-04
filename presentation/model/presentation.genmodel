@@ -12,7 +12,6 @@
     <genClasses ecoreClass="presentation.ecore#//Presentation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//Presentation/titre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//Presentation/retourAutorise"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute presentation.ecore#//Presentation/questionsAleatoires"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Presentation/pages"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference presentation.ecore#//Presentation/categoriesSelectionnees"/>
     </genClasses>

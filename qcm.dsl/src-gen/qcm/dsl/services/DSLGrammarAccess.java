@@ -171,39 +171,36 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class QuestionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "qcm.dsl.DSL.Question");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cReponseUniqueAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cReponseUniqueReponseUniqueKeyword_0_0 = (Keyword)cReponseUniqueAssignment_0.eContents().get(0);
-		private final Keyword cQuestionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cIntituleKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cIntituleAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cIntituleEStringParserRuleCall_4_0 = (RuleCall)cIntituleAssignment_4.eContents().get(0);
-		private final Keyword cDifficulteKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cDifficulteAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cDifficulteELongParserRuleCall_6_0 = (RuleCall)cDifficulteAssignment_6.eContents().get(0);
-		private final Keyword cReponsesKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cReponsesAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cReponsesReponseParserRuleCall_9_0 = (RuleCall)cReponsesAssignment_9.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cReponsesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cReponsesReponseParserRuleCall_10_1_0 = (RuleCall)cReponsesAssignment_10_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cEtiquetteKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Assignment cEtiquetteAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
-		private final RuleCall cEtiquetteEtiquetteParserRuleCall_12_2_0 = (RuleCall)cEtiquetteAssignment_12_2.eContents().get(0);
-		private final Group cGroup_12_3 = (Group)cGroup_12.eContents().get(3);
-		private final Keyword cCommaKeyword_12_3_0 = (Keyword)cGroup_12_3.eContents().get(0);
-		private final Assignment cEtiquetteAssignment_12_3_1 = (Assignment)cGroup_12_3.eContents().get(1);
-		private final RuleCall cEtiquetteEtiquetteParserRuleCall_12_3_1_0 = (RuleCall)cEtiquetteAssignment_12_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_12_4 = (Keyword)cGroup_12.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cQuestionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIntituleKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cIntituleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cIntituleEStringParserRuleCall_3_0 = (RuleCall)cIntituleAssignment_3.eContents().get(0);
+		private final Keyword cDifficulteKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDifficulteAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDifficulteELongParserRuleCall_5_0 = (RuleCall)cDifficulteAssignment_5.eContents().get(0);
+		private final Keyword cReponsesKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cReponsesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cReponsesReponseParserRuleCall_8_0 = (RuleCall)cReponsesAssignment_8.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cReponsesAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cReponsesReponseParserRuleCall_9_1_0 = (RuleCall)cReponsesAssignment_9_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cEtiquetteKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Assignment cEtiquetteAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
+		private final RuleCall cEtiquetteEtiquetteParserRuleCall_11_2_0 = (RuleCall)cEtiquetteAssignment_11_2.eContents().get(0);
+		private final Group cGroup_11_3 = (Group)cGroup_11.eContents().get(3);
+		private final Keyword cCommaKeyword_11_3_0 = (Keyword)cGroup_11_3.eContents().get(0);
+		private final Assignment cEtiquetteAssignment_11_3_1 = (Assignment)cGroup_11_3.eContents().get(1);
+		private final RuleCall cEtiquetteEtiquetteParserRuleCall_11_3_1_0 = (RuleCall)cEtiquetteAssignment_11_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11_4 = (Keyword)cGroup_11.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Question returns Question:
-		//    reponseUnique?='reponseUnique'
 		//    'Question'
 		//    '{'
 		//        'intitule' intitule=EString
@@ -213,7 +210,6 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//reponseUnique?='reponseUnique'
 		//'Question'
 		//'{'
 		//    'intitule' intitule=EString
@@ -223,95 +219,89 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//reponseUnique?='reponseUnique'
-		public Assignment getReponseUniqueAssignment_0() { return cReponseUniqueAssignment_0; }
-		
-		//'reponseUnique'
-		public Keyword getReponseUniqueReponseUniqueKeyword_0_0() { return cReponseUniqueReponseUniqueKeyword_0_0; }
-		
 		//'Question'
-		public Keyword getQuestionKeyword_1() { return cQuestionKeyword_1; }
+		public Keyword getQuestionKeyword_0() { return cQuestionKeyword_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//'intitule'
-		public Keyword getIntituleKeyword_3() { return cIntituleKeyword_3; }
+		public Keyword getIntituleKeyword_2() { return cIntituleKeyword_2; }
 		
 		//intitule=EString
-		public Assignment getIntituleAssignment_4() { return cIntituleAssignment_4; }
+		public Assignment getIntituleAssignment_3() { return cIntituleAssignment_3; }
 		
 		//EString
-		public RuleCall getIntituleEStringParserRuleCall_4_0() { return cIntituleEStringParserRuleCall_4_0; }
+		public RuleCall getIntituleEStringParserRuleCall_3_0() { return cIntituleEStringParserRuleCall_3_0; }
 		
 		//'difficulte'
-		public Keyword getDifficulteKeyword_5() { return cDifficulteKeyword_5; }
+		public Keyword getDifficulteKeyword_4() { return cDifficulteKeyword_4; }
 		
 		//difficulte=ELong
-		public Assignment getDifficulteAssignment_6() { return cDifficulteAssignment_6; }
+		public Assignment getDifficulteAssignment_5() { return cDifficulteAssignment_5; }
 		
 		//ELong
-		public RuleCall getDifficulteELongParserRuleCall_6_0() { return cDifficulteELongParserRuleCall_6_0; }
+		public RuleCall getDifficulteELongParserRuleCall_5_0() { return cDifficulteELongParserRuleCall_5_0; }
 		
 		//'reponses'
-		public Keyword getReponsesKeyword_7() { return cReponsesKeyword_7; }
+		public Keyword getReponsesKeyword_6() { return cReponsesKeyword_6; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
 		
 		//reponses+=Reponse
-		public Assignment getReponsesAssignment_9() { return cReponsesAssignment_9; }
+		public Assignment getReponsesAssignment_8() { return cReponsesAssignment_8; }
 		
 		//Reponse
-		public RuleCall getReponsesReponseParserRuleCall_9_0() { return cReponsesReponseParserRuleCall_9_0; }
+		public RuleCall getReponsesReponseParserRuleCall_8_0() { return cReponsesReponseParserRuleCall_8_0; }
 		
 		//( "," reponses+=Reponse)*
-		public Group getGroup_10() { return cGroup_10; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//","
-		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
 		
 		//reponses+=Reponse
-		public Assignment getReponsesAssignment_10_1() { return cReponsesAssignment_10_1; }
+		public Assignment getReponsesAssignment_9_1() { return cReponsesAssignment_9_1; }
 		
 		//Reponse
-		public RuleCall getReponsesReponseParserRuleCall_10_1_0() { return cReponsesReponseParserRuleCall_10_1_0; }
+		public RuleCall getReponsesReponseParserRuleCall_9_1_0() { return cReponsesReponseParserRuleCall_9_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 		
 		//('etiquette' '{' etiquette+=Etiquette ( "," etiquette+=Etiquette)* '}' )?
-		public Group getGroup_12() { return cGroup_12; }
+		public Group getGroup_11() { return cGroup_11; }
 		
 		//'etiquette'
-		public Keyword getEtiquetteKeyword_12_0() { return cEtiquetteKeyword_12_0; }
+		public Keyword getEtiquetteKeyword_11_0() { return cEtiquetteKeyword_11_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_12_1() { return cLeftCurlyBracketKeyword_12_1; }
+		public Keyword getLeftCurlyBracketKeyword_11_1() { return cLeftCurlyBracketKeyword_11_1; }
 		
 		//etiquette+=Etiquette
-		public Assignment getEtiquetteAssignment_12_2() { return cEtiquetteAssignment_12_2; }
+		public Assignment getEtiquetteAssignment_11_2() { return cEtiquetteAssignment_11_2; }
 		
 		//Etiquette
-		public RuleCall getEtiquetteEtiquetteParserRuleCall_12_2_0() { return cEtiquetteEtiquetteParserRuleCall_12_2_0; }
+		public RuleCall getEtiquetteEtiquetteParserRuleCall_11_2_0() { return cEtiquetteEtiquetteParserRuleCall_11_2_0; }
 		
 		//( "," etiquette+=Etiquette)*
-		public Group getGroup_12_3() { return cGroup_12_3; }
+		public Group getGroup_11_3() { return cGroup_11_3; }
 		
 		//","
-		public Keyword getCommaKeyword_12_3_0() { return cCommaKeyword_12_3_0; }
+		public Keyword getCommaKeyword_11_3_0() { return cCommaKeyword_11_3_0; }
 		
 		//etiquette+=Etiquette
-		public Assignment getEtiquetteAssignment_12_3_1() { return cEtiquetteAssignment_12_3_1; }
+		public Assignment getEtiquetteAssignment_11_3_1() { return cEtiquetteAssignment_11_3_1; }
 		
 		//Etiquette
-		public RuleCall getEtiquetteEtiquetteParserRuleCall_12_3_1_0() { return cEtiquetteEtiquetteParserRuleCall_12_3_1_0; }
+		public RuleCall getEtiquetteEtiquetteParserRuleCall_11_3_1_0() { return cEtiquetteEtiquetteParserRuleCall_11_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_12_4() { return cRightCurlyBracketKeyword_12_4; }
+		public Keyword getRightCurlyBracketKeyword_11_4() { return cRightCurlyBracketKeyword_11_4; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	public class ELongElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "qcm.dsl.DSL.ELong");
@@ -538,7 +528,6 @@ public class DSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Question returns Question:
-	//    reponseUnique?='reponseUnique'
 	//    'Question'
 	//    '{'
 	//        'intitule' intitule=EString

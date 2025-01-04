@@ -23,7 +23,6 @@ EBoolean returns ecore::EBoolean:
 	'true' | 'false';
 
 Question returns Question:
-	reponseUnique?='reponseUnique'
 	'Question'
 	'{'
 		'intitule' intitule=EString

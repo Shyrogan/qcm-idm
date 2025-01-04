@@ -70,14 +70,7 @@ public class DSLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Question returns Question
 	 *
 	 * Constraint:
-	 *     (
-	 *         reponseUnique?='reponseUnique' 
-	 *         intitule=EString 
-	 *         difficulte=ELong 
-	 *         reponses+=Reponse 
-	 *         reponses+=Reponse* 
-	 *         (etiquette+=Etiquette etiquette+=Etiquette*)?
-	 *     )
+	 *     (intitule=EString difficulte=ELong reponses+=Reponse reponses+=Reponse* (etiquette+=Etiquette etiquette+=Etiquette*)?)
 	 * </pre>
 	 */
 	protected void sequence_Question(ISerializationContext context, Question semanticObject) {

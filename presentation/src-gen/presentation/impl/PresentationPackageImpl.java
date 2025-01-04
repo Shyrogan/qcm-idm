@@ -159,18 +159,8 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPresentation_QuestionsAleatoires() {
-		return (EAttribute) presentationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getPresentation_Pages() {
-		return (EReference) presentationEClass.getEStructuralFeatures().get(3);
+		return (EReference) presentationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -180,7 +170,7 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 	 */
 	@Override
 	public EReference getPresentation_CategoriesSelectionnees() {
-		return (EReference) presentationEClass.getEStructuralFeatures().get(4);
+		return (EReference) presentationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -386,7 +376,6 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 		presentationEClass = createEClass(PRESENTATION);
 		createEAttribute(presentationEClass, PRESENTATION__TITRE);
 		createEAttribute(presentationEClass, PRESENTATION__RETOUR_AUTORISE);
-		createEAttribute(presentationEClass, PRESENTATION__QUESTIONS_ALEATOIRES);
 		createEReference(presentationEClass, PRESENTATION__PAGES);
 		createEReference(presentationEClass, PRESENTATION__CATEGORIES_SELECTIONNEES);
 
@@ -449,9 +438,6 @@ public class PresentationPackageImpl extends EPackageImpl implements Presentatio
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentation_RetourAutorise(), ecorePackage.getEBoolean(), "retourAutorise", null, 0, 1,
 				Presentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPresentation_QuestionsAleatoires(), ecorePackage.getEBoolean(), "questionsAleatoires", null,
-				0, 1, Presentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEReference(getPresentation_Pages(), this.getPage(), null, "pages", null, 0, -1, Presentation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,

@@ -1,14 +1,8 @@
-[comment encoding = UTF-8 /]
-[module generate('http://www.example.org/presentation')]
-
-[template public generateHTML(p : Presentation)]
-[comment @main/]
-[file ('quiz.html', false, 'UTF-8')]
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="UTF-8">
-   <title>[p.titre/]</title>
+   <title>Quiz de Culture Générale</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -209,7 +203,7 @@
        let answers = new Map();
        let answersHistory = new Map();
        let totalQuestions = 0;
-       let retourAutorise = [p.retourAutorise/];
+       let retourAutorise = false;
 
 		function showPage(index) {
 		    let pages = document.querySelectorAll('.page');
@@ -338,50 +332,236 @@
    </script>
 </head>
 <body>
-   <h1>[p.titre/]</h1>
-   [for (page : Page | p.pages)]
+   <h1>Quiz de Culture Générale</h1>
    <div class="page">
-       <h2>Question [page.numero/]</h2>
+       <h2>Question 1</h2>
        <div class="question-info">
            <span class="difficulty">Difficulté: 
-               [if (page.question.niveauDifficulte = 1)]⭐[/if]
-               [if (page.question.niveauDifficulte = 2)]⭐⭐[/if]
-               [if (page.question.niveauDifficulte = 3)]⭐⭐⭐[/if]
-               [if (page.question.niveauDifficulte = 4)]⭐⭐⭐⭐[/if]
-               [if (page.question.niveauDifficulte = 5)]⭐⭐⭐⭐⭐[/if]
+               
+               
+               ⭐⭐⭐
+               
+               
            </span>
            <span class="categories">
-               Thèmes: [for (cat : CategorieQuestion | page.question.categories) separator(', ')][cat.nom/][/for]
+               Thèmes: Informatique, Programmation
            </span>
        </div>
-       <p>[page.question.intitule/]</p>
-       [for (r : ReponseProposee | page.question.reponsesPossibles)]
+       <p>Quels sont les langages de programmation orientés objet parmi les suivants?</p>
        <label class="response-element">
-           <input class="quiz-input" type="[if (page.question.choixMultiple)]checkbox[else]radio[/if]" 
-                  name="q-page-[page.numero/]" 
-                  data-correct="[r.estCorrecte/]">
-           [r.texte/]
+           <input class="quiz-input" type="checkbox" 
+                  name="q-page-1" 
+                  data-correct="true">
+           Java
        </label>
-       [/for]
+       <label class="response-element">
+           <input class="quiz-input" type="checkbox" 
+                  name="q-page-1" 
+                  data-correct="true">
+           Python
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="checkbox" 
+                  name="q-page-1" 
+                  data-correct="false">
+           C
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="checkbox" 
+                  name="q-page-1" 
+                  data-correct="true">
+           C++
+       </label>
        <button onclick="validateAnswer()">Valider</button>
    </div>
    
-   <div id="question-template-[page.numero/]" style="display: none;">
-       <h3>Question [page.numero/]</h3>
+   <div id="question-template-1" style="display: none;">
+       <h3>Question 1</h3>
        <div class="question-info">
-           <span class="difficulty">Difficulté: [page.question.niveauDifficulte/]/5</span>
+           <span class="difficulty">Difficulté: 3/5</span>
            <span class="categories">
-               Thèmes: [for (cat : CategorieQuestion | page.question.categories) separator(', ')][cat.nom/][/for]
+               Thèmes: Informatique, Programmation
            </span>
        </div>
-       <p>[page.question.intitule/]</p>
-       [for (r : ReponseProposee | page.question.reponsesPossibles)]
-       <div class="response-element" data-correct="[r.estCorrecte/]">
-           [r.texte/]
+       <p>Quels sont les langages de programmation orientés objet parmi les suivants?</p>
+       <div class="response-element" data-correct="true">
+           Java
        </div>
-       [/for]
+       <div class="response-element" data-correct="true">
+           Python
+       </div>
+       <div class="response-element" data-correct="false">
+           C
+       </div>
+       <div class="response-element" data-correct="true">
+           C++
+       </div>
    </div>
-   [/for]
+   <div class="page">
+       <h2>Question 2</h2>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 
+               
+               
+               ⭐⭐⭐
+               
+               
+           </span>
+           <span class="categories">
+               Thèmes: Informatique, Programmation
+           </span>
+       </div>
+       <p>Quel est le langage principal utilisé pour le développement d'applications Android?</p>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-2" 
+                  data-correct="true">
+           Kotlin
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-2" 
+                  data-correct="false">
+           Swift
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-2" 
+                  data-correct="false">
+           JavaScript
+       </label>
+       <button onclick="validateAnswer()">Valider</button>
+   </div>
+   
+   <div id="question-template-2" style="display: none;">
+       <h3>Question 2</h3>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 3/5</span>
+           <span class="categories">
+               Thèmes: Informatique, Programmation
+           </span>
+       </div>
+       <p>Quel est le langage principal utilisé pour le développement d'applications Android?</p>
+       <div class="response-element" data-correct="true">
+           Kotlin
+       </div>
+       <div class="response-element" data-correct="false">
+           Swift
+       </div>
+       <div class="response-element" data-correct="false">
+           JavaScript
+       </div>
+   </div>
+   <div class="page">
+       <h2>Question 3</h2>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 
+               
+               
+               
+               ⭐⭐⭐⭐
+               
+           </span>
+           <span class="categories">
+               Thèmes: Informatique, Histoire
+           </span>
+       </div>
+       <p>En quelle année a été créé le World Wide Web?</p>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-3" 
+                  data-correct="true">
+           1989
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-3" 
+                  data-correct="false">
+           1995
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-3" 
+                  data-correct="false">
+           1983
+       </label>
+       <button onclick="validateAnswer()">Valider</button>
+   </div>
+   
+   <div id="question-template-3" style="display: none;">
+       <h3>Question 3</h3>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 4/5</span>
+           <span class="categories">
+               Thèmes: Informatique, Histoire
+           </span>
+       </div>
+       <p>En quelle année a été créé le World Wide Web?</p>
+       <div class="response-element" data-correct="true">
+           1989
+       </div>
+       <div class="response-element" data-correct="false">
+           1995
+       </div>
+       <div class="response-element" data-correct="false">
+           1983
+       </div>
+   </div>
+   <div class="page">
+       <h2>Question 4</h2>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 
+               
+               
+               
+               ⭐⭐⭐⭐
+               
+           </span>
+           <span class="categories">
+               Thèmes: Informatique, Histoire
+           </span>
+       </div>
+       <p>Quel était le premier navigateur web de l'histoire?</p>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-4" 
+                  data-correct="true">
+           WorldWideWeb
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-4" 
+                  data-correct="false">
+           Netscape Navigator
+       </label>
+       <label class="response-element">
+           <input class="quiz-input" type="radio" 
+                  name="q-page-4" 
+                  data-correct="false">
+           Internet Explorer
+       </label>
+       <button onclick="validateAnswer()">Valider</button>
+   </div>
+   
+   <div id="question-template-4" style="display: none;">
+       <h3>Question 4</h3>
+       <div class="question-info">
+           <span class="difficulty">Difficulté: 4/5</span>
+           <span class="categories">
+               Thèmes: Informatique, Histoire
+           </span>
+       </div>
+       <p>Quel était le premier navigateur web de l'histoire?</p>
+       <div class="response-element" data-correct="true">
+           WorldWideWeb
+       </div>
+       <div class="response-element" data-correct="false">
+           Netscape Navigator
+       </div>
+       <div class="response-element" data-correct="false">
+           Internet Explorer
+       </div>
+   </div>
    
    <div id="finish-page" class="finish-page">
        <h2>QCM Terminé</h2>
@@ -396,5 +576,3 @@
    </div>
 </body>
 </html>
-[/file]
-[/template]

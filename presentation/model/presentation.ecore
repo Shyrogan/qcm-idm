@@ -4,7 +4,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Presentation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="titre" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="retourAutorise" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="questionsAleatoires" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
         eType="#//Page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="categoriesSelectionnees"

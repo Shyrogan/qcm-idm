@@ -5,6 +5,10 @@ package qcm.dsl;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+
+import qcm.QcmPackage;
+
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.ISetup;
 import org.eclipse.xtext.common.TerminalsStandaloneSetup;
@@ -33,5 +37,6 @@ public class DSLStandaloneSetupGenerated implements ISetup {
 		
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("qcm", resourceFactory);
 		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("qcm", serviceProvider);
+		EPackage.Registry.INSTANCE.put("http://www.example.org/qcm", QcmPackage.eINSTANCE);
 	}
 }

@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link presentation.Presentation#getTitre <em>Titre</em>}</li>
  *   <li>{@link presentation.Presentation#isRetourAutorise <em>Retour Autorise</em>}</li>
- *   <li>{@link presentation.Presentation#isQuestionsAleatoires <em>Questions Aleatoires</em>}</li>
  *   <li>{@link presentation.Presentation#getPages <em>Pages</em>}</li>
  *   <li>{@link presentation.Presentation#getCategoriesSelectionnees <em>Categories Selectionnees</em>}</li>
  * </ul>
@@ -70,28 +69,6 @@ public interface Presentation extends EObject {
 	 * @generated
 	 */
 	void setRetourAutorise(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Questions Aleatoires</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Questions Aleatoires</em>' attribute.
-	 * @see #setQuestionsAleatoires(boolean)
-	 * @see presentation.PresentationPackage#getPresentation_QuestionsAleatoires()
-	 * @model
-	 * @generated
-	 */
-	boolean isQuestionsAleatoires();
-
-	/**
-	 * Sets the value of the '{@link presentation.Presentation#isQuestionsAleatoires <em>Questions Aleatoires</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Questions Aleatoires</em>' attribute.
-	 * @see #isQuestionsAleatoires()
-	 * @generated
-	 */
-	void setQuestionsAleatoires(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.

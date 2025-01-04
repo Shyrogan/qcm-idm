@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import presentation.CategorieQuestion;
 import presentation.Page;
 import presentation.Presentation;
@@ -33,7 +32,6 @@ import presentation.PresentationPackage;
  * <ul>
  *   <li>{@link presentation.impl.PresentationImpl#getTitre <em>Titre</em>}</li>
  *   <li>{@link presentation.impl.PresentationImpl#isRetourAutorise <em>Retour Autorise</em>}</li>
- *   <li>{@link presentation.impl.PresentationImpl#isQuestionsAleatoires <em>Questions Aleatoires</em>}</li>
  *   <li>{@link presentation.impl.PresentationImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link presentation.impl.PresentationImpl#getCategoriesSelectionnees <em>Categories Selectionnees</em>}</li>
  * </ul>
@@ -80,26 +78,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @ordered
 	 */
 	protected boolean retourAutorise = RETOUR_AUTORISE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isQuestionsAleatoires() <em>Questions Aleatoires</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isQuestionsAleatoires()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean QUESTIONS_ALEATOIRES_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isQuestionsAleatoires() <em>Questions Aleatoires</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isQuestionsAleatoires()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean questionsAleatoires = QUESTIONS_ALEATOIRES_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getPages() <em>Pages</em>}' containment reference list.
@@ -194,31 +172,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @generated
 	 */
 	@Override
-	public boolean isQuestionsAleatoires() {
-		return questionsAleatoires;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setQuestionsAleatoires(boolean newQuestionsAleatoires) {
-		boolean oldQuestionsAleatoires = questionsAleatoires;
-		questionsAleatoires = newQuestionsAleatoires;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					PresentationPackage.PRESENTATION__QUESTIONS_ALEATOIRES, oldQuestionsAleatoires,
-					questionsAleatoires));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Page> getPages() {
 		if (pages == null) {
 			pages = new EObjectContainmentEList<Page>(Page.class, this, PresentationPackage.PRESENTATION__PAGES);
@@ -268,8 +221,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 			return getTitre();
 		case PresentationPackage.PRESENTATION__RETOUR_AUTORISE:
 			return isRetourAutorise();
-		case PresentationPackage.PRESENTATION__QUESTIONS_ALEATOIRES:
-			return isQuestionsAleatoires();
 		case PresentationPackage.PRESENTATION__PAGES:
 			return getPages();
 		case PresentationPackage.PRESENTATION__CATEGORIES_SELECTIONNEES:
@@ -292,9 +243,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 			return;
 		case PresentationPackage.PRESENTATION__RETOUR_AUTORISE:
 			setRetourAutorise((Boolean) newValue);
-			return;
-		case PresentationPackage.PRESENTATION__QUESTIONS_ALEATOIRES:
-			setQuestionsAleatoires((Boolean) newValue);
 			return;
 		case PresentationPackage.PRESENTATION__PAGES:
 			getPages().clear();
@@ -322,9 +270,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 		case PresentationPackage.PRESENTATION__RETOUR_AUTORISE:
 			setRetourAutorise(RETOUR_AUTORISE_EDEFAULT);
 			return;
-		case PresentationPackage.PRESENTATION__QUESTIONS_ALEATOIRES:
-			setQuestionsAleatoires(QUESTIONS_ALEATOIRES_EDEFAULT);
-			return;
 		case PresentationPackage.PRESENTATION__PAGES:
 			getPages().clear();
 			return;
@@ -347,8 +292,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 			return TITRE_EDEFAULT == null ? titre != null : !TITRE_EDEFAULT.equals(titre);
 		case PresentationPackage.PRESENTATION__RETOUR_AUTORISE:
 			return retourAutorise != RETOUR_AUTORISE_EDEFAULT;
-		case PresentationPackage.PRESENTATION__QUESTIONS_ALEATOIRES:
-			return questionsAleatoires != QUESTIONS_ALEATOIRES_EDEFAULT;
 		case PresentationPackage.PRESENTATION__PAGES:
 			return pages != null && !pages.isEmpty();
 		case PresentationPackage.PRESENTATION__CATEGORIES_SELECTIONNEES:
@@ -372,8 +315,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 		result.append(titre);
 		result.append(", retourAutorise: ");
 		result.append(retourAutorise);
-		result.append(", questionsAleatoires: ");
-		result.append(questionsAleatoires);
 		result.append(')');
 		return result.toString();
 	}

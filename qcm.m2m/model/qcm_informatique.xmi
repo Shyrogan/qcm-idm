@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<presentation:Presentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:presentation="http://www.example.org/presentation" titre="Quiz de Culture G&#xe9;n&#xe9;rale">
+  <pages numero="1" pageSuivante="//@pages.1">
+    <question categories="//@categoriesSelectionnees.0 //@categoriesSelectionnees.1" intitule="Quels sont les langages de programmation orient&#xe9;s objet parmi les suivants?" niveauDifficulte="3" choixMultiple="true">
+      <reponsesPossibles texte="Java" estCorrecte="true"/>
+      <reponsesPossibles texte="Python" estCorrecte="true"/>
+      <reponsesPossibles texte="C"/>
+      <reponsesPossibles texte="C++" estCorrecte="true"/>
+    </question>
+  </pages>
+  <pages numero="2" pageSuivante="//@pages.2" pagePrecedente="//@pages.0">
+    <question categories="//@categoriesSelectionnees.0 //@categoriesSelectionnees.1" intitule="Quel est le langage principal utilis&#xe9; pour le d&#xe9;veloppement d'applications Android?" niveauDifficulte="3">
+      <reponsesPossibles texte="Kotlin" estCorrecte="true"/>
+      <reponsesPossibles texte="Swift"/>
+      <reponsesPossibles texte="JavaScript"/>
+    </question>
+  </pages>
+  <pages numero="3" pageSuivante="//@pages.3" pagePrecedente="//@pages.1">
+    <question categories="//@categoriesSelectionnees.0 //@categoriesSelectionnees.2" intitule="En quelle ann&#xe9;e a &#xe9;t&#xe9; cr&#xe9;&#xe9; le World Wide Web?" niveauDifficulte="4">
+      <reponsesPossibles texte="1989" estCorrecte="true"/>
+      <reponsesPossibles texte="1995"/>
+      <reponsesPossibles texte="1983"/>
+    </question>
+  </pages>
+  <pages numero="4" pagePrecedente="//@pages.2">
+    <question categories="//@categoriesSelectionnees.0 //@categoriesSelectionnees.2" intitule="Quel &#xe9;tait le premier navigateur web de l'histoire?" niveauDifficulte="4">
+      <reponsesPossibles texte="WorldWideWeb" estCorrecte="true"/>
+      <reponsesPossibles texte="Netscape Navigator"/>
+      <reponsesPossibles texte="Internet Explorer"/>
+    </question>
+  </pages>
+  <categoriesSelectionnees nom="Informatique"/>
+  <categoriesSelectionnees nom="Programmation"/>
+  <categoriesSelectionnees nom="Histoire"/>
+</presentation:Presentation>

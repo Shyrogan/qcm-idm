@@ -85,22 +85,13 @@ public interface PresentationPackage extends EPackage {
 	int PRESENTATION__RETOUR_AUTORISE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Questions Aleatoires</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRESENTATION__QUESTIONS_ALEATOIRES = 2;
-
-	/**
 	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRESENTATION__PAGES = 3;
+	int PRESENTATION__PAGES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Categories Selectionnees</b></em>' containment reference list.
@@ -109,7 +100,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRESENTATION__CATEGORIES_SELECTIONNEES = 4;
+	int PRESENTATION__CATEGORIES_SELECTIONNEES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Presentation</em>' class.
@@ -118,7 +109,7 @@ public interface PresentationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRESENTATION_FEATURE_COUNT = 5;
+	int PRESENTATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Presentation</em>' class.
@@ -391,17 +382,6 @@ public interface PresentationPackage extends EPackage {
 	EAttribute getPresentation_RetourAutorise();
 
 	/**
-	 * Returns the meta object for the attribute '{@link presentation.Presentation#isQuestionsAleatoires <em>Questions Aleatoires</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Questions Aleatoires</em>'.
-	 * @see presentation.Presentation#isQuestionsAleatoires()
-	 * @see #getPresentation()
-	 * @generated
-	 */
-	EAttribute getPresentation_QuestionsAleatoires();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link presentation.Presentation#getPages <em>Pages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -654,14 +634,6 @@ public interface PresentationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRESENTATION__RETOUR_AUTORISE = eINSTANCE.getPresentation_RetourAutorise();
-
-		/**
-		 * The meta object literal for the '<em><b>Questions Aleatoires</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PRESENTATION__QUESTIONS_ALEATOIRES = eINSTANCE.getPresentation_QuestionsAleatoires();
 
 		/**
 		 * The meta object literal for the '<em><b>Pages</b></em>' containment reference list feature.

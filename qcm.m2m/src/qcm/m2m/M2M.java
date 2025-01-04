@@ -6,6 +6,8 @@ import presentation.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
@@ -19,18 +21,54 @@ import qcm.Questionnaire;
 import qcm.Reponse;
 import qcm.Etiquette;
 import qcm.dsl.DSLStandaloneSetup;
-
+import java.util.Set;
+import java.util.stream.Collectors;
 public class M2M {
-    public static void main(String[] args) {
-        System.out.println("Début de la transformation M2M");
-        
-        Questionnaire questionnaire = chargerQuestionnaire("model/model.qcm");
-        Presentation presentation = transformerQuestionnaire(questionnaire);
-        sauvegarderPresentation(presentation, "model/presentation.xmi");
-        
-        System.out.println("Fin de la transformation M2M");
+    private static class TransformationParams {
+    	List<String> filterTags;
+        Integer difficulteMin;
+        Integer difficulteMax;
+        boolean trierParDifficulte;
+        boolean ordreCroissant;
+        boolean matchAllTags;
     }
 
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            System.out.println("Usage: java M2M <qcm_file> [tags] [-d min max] [-sort asc|desc] [-matchAll]");
+            return;
+        }
+
+        TransformationParams params = new TransformationParams();
+        String qcmFile = args[0];
+        
+        for (int i = 1; i < args.length; i++) {
+            switch (args[i]) {
+                case "-d":
+                    params.difficulteMin = Integer.parseInt(args[++i]);
+                    params.difficulteMax = Integer.parseInt(args[++i]);
+                    break;
+                case "-sort":
+                    params.trierParDifficulte = true;
+                    params.ordreCroissant = args[++i].equals("asc");
+                    break;
+                case "-matchAll":
+                    params.matchAllTags = true;
+                    break;
+                default:
+                    if (params.filterTags == null) {
+                        params.filterTags = new ArrayList<>();
+                    }
+                    params.filterTags.add(args[i]);
+            }
+        }
+
+        Questionnaire questionnaire = chargerQuestionnaire(qcmFile);
+        Presentation presentation = transformerQuestionnaire(questionnaire, params);
+        sauvegarderPresentation(presentation, "model/presentation.xmi");
+    }
+    
+    
     private static Questionnaire chargerQuestionnaire(String path) {
         System.out.println("Chargement du questionnaire depuis: " + path);
         
@@ -48,37 +86,68 @@ public class M2M {
             throw new RuntimeException("Erreur lors du chargement du questionnaire", e);
         }
     }
+    
 
- // Modifier transformerQuestionnaire pour passer la présentation
-    private static Presentation transformerQuestionnaire(Questionnaire questionnaire) {
-        System.out.println("Début de la transformation du questionnaire");
-        
+    private static Presentation transformerQuestionnaire(Questionnaire questionnaire, TransformationParams params) {
         Presentation presentation = PresentationFactory.eINSTANCE.createPresentation();
         presentation.setTitre(questionnaire.getTitre());
         presentation.setRetourAutorise(questionnaire.isRetourArriere());
-        presentation.setQuestionsAleatoires(questionnaire.isMelange());
         
-        List<Page> pages = creerPages(questionnaire, presentation); // Passer la présentation
+        List<Question> questions = new ArrayList<>(questionnaire.getPossede());
+        if (questionnaire.isMelange()) {
+        	Collections.shuffle(questions);
+        }
+  
+        List<Question> questionsFiltrees = filtrerQuestions(questions, params);
+        if (params.trierParDifficulte) {
+            trierQuestions(questionsFiltrees, params.ordreCroissant);
+        }
+        
+        List<Page> pages = creerPages(questionsFiltrees, presentation);
         etablirNavigation(pages);
         presentation.getPages().addAll(pages);
-        
-        System.out.println("Transformation terminée - Nombre de pages créées: " + pages.size());
         return presentation;
     }
 
-    // Modifier creerPages pour accepter la présentation
-    private static List<Page> creerPages(Questionnaire questionnaire, Presentation presentation) {
-        System.out.println("Création des pages du questionnaire");
-        
+    private static List<Question> filtrerQuestions(List<Question> questions, TransformationParams params) {
+    	   return questions.stream()
+    	       .filter(q -> {
+    	           boolean matchTags = true;
+    	           if (params.filterTags != null && !params.filterTags.isEmpty()) {
+    	               Set<String> questionTags = q.getEtiquette().stream()
+    	                   .map(Etiquette::getCategorie)
+    	                   .collect(Collectors.toSet());
+    	                   
+    	               if (params.matchAllTags) {
+    	                   matchTags = questionTags.containsAll(params.filterTags);
+    	               } else {
+    	                   matchTags = params.filterTags.stream()
+    	                       .anyMatch(questionTags::contains);
+    	               }
+    	           }
+    	           
+    	           boolean matchDifficulte = (params.difficulteMin == null || q.getDifficulte() >= params.difficulteMin) &&
+    	               (params.difficulteMax == null || q.getDifficulte() <= params.difficulteMax);
+    	               
+    	           return matchTags && matchDifficulte;
+    	       })
+    	       .collect(Collectors.toList());
+    	}
+    private static void trierQuestions(List<Question> questions, boolean croissant) {
+        questions.sort((q1, q2) -> croissant ? 
+            Long.compare(q1.getDifficulte(), q2.getDifficulte()) :
+            Long.compare(q2.getDifficulte(), q1.getDifficulte()));
+    }
+
+
+    private static List<Page> creerPages(List<Question> questions, Presentation presentation) {
         List<Page> pages = new ArrayList<>();
         int numeroPage = 1;
         
-        for (Question questionSource : questionnaire.getPossede()) {
-            Page page = creerPage(questionSource, numeroPage++, presentation); // Passer la présentation
+        for (Question questionSource : questions) {  // Utilise la liste filtrée
+            Page page = creerPage(questionSource, numeroPage++, presentation);
             pages.add(page);
-            System.out.println("Page " + (numeroPage-1) + " créée");
         }
-        
         return pages;
     }
 
@@ -99,7 +168,11 @@ public class M2M {
         QuestionAffichee questionAffichee = PresentationFactory.eINSTANCE.createQuestionAffichee();
         questionAffichee.setIntitule(questionSource.getIntitule());
         questionAffichee.setNiveauDifficulte((int) questionSource.getDifficulte());
-        questionAffichee.setChoixMultiple(!questionSource.isReponseUnique());
+        questionAffichee.setChoixMultiple(questionSource.getReponses()
+        		.stream()
+        		.filter(Reponse::isValide)
+        		.count() > 1
+        );
         
         // Ajouter les catégories directement à la question
         for (Etiquette etiquette : questionSource.getEtiquette()) {

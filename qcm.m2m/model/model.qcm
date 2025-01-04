@@ -3,7 +3,6 @@ Questionnaire {
   titre "Quiz de Culture Générale"
   retourArriere true
   possede {
-    reponseUnique
     Question {
       intitule "Quelle est la capitale de la France?"
       difficulte 1
@@ -110,7 +109,6 @@ Questionnaire {
         }
       }
     },
-    reponseUnique
     Question {
       intitule "En quelle année a été créé le World Wide Web?"
       difficulte 4
@@ -124,6 +122,130 @@ Questionnaire {
         },
         Reponse {
           intitule "1983"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Informatique"
+        },
+        Etiquette {
+          categorie "Histoire"
+        }
+      }
+    },
+    Question {
+      intitule "Quel pays est le plus grand en superficie?"
+      difficulte 2
+      reponses {
+        valide
+        Reponse {
+          intitule "Russie"
+        },
+        Reponse {
+          intitule "Canada"
+        },
+        Reponse {
+          intitule "Chine"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Géographie"
+        },
+        Etiquette {
+          categorie "Monde"
+        }
+      }
+    },
+    Question {
+      intitule "Quel est le langage principal utilisé pour le développement d'applications Android?"
+      difficulte 3
+      reponses {
+        valide
+        Reponse {
+          intitule "Kotlin"
+        },
+        Reponse {
+          intitule "Swift"
+        },
+        Reponse {
+          intitule "JavaScript"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Informatique"
+        },
+        Etiquette {
+          categorie "Programmation"
+        }
+      }
+    },
+    Question {
+      intitule "Qui a écrit 'Le Rouge et le Noir'?"
+      difficulte 2
+      reponses {
+        valide
+        Reponse {
+          intitule "Stendhal"
+        },
+        Reponse {
+          intitule "Gustave Flaubert"
+        },
+        Reponse {
+          intitule "Honoré de Balzac"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Littérature"
+        },
+        Etiquette {
+          categorie "Culture"
+        }
+      }
+    },
+    Question {
+      intitule "Quels sont les éléments chimiques les plus abondants dans l'univers?"
+      difficulte 3
+      reponses {
+        valide
+        Reponse {
+          intitule "Hydrogène"
+        },
+        valide
+        Reponse {
+          intitule "Hélium"
+        },
+        Reponse {
+          intitule "Carbone"
+        },
+        Reponse {
+          intitule "Oxygène"
+        }
+      }
+      etiquette {
+        Etiquette {
+          categorie "Science"
+        },
+        Etiquette {
+          categorie "Astronomie"
+        }
+      }
+    },
+    Question {
+      intitule "Quel était le premier navigateur web de l'histoire?"
+      difficulte 4
+      reponses {
+        valide
+        Reponse {
+          intitule "WorldWideWeb"
+        },
+        Reponse {
+          intitule "Netscape Navigator"
+        },
+        Reponse {
+          intitule "Internet Explorer"
         }
       }
       etiquette {

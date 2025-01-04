@@ -7,4 +7,5 @@
     <fullyQualifiedTypeName name="presentation.PresentationFactory"/>
     <fullyQualifiedTypeName name="qcm.Question"/>
     <fullyQualifiedTypeName name="presentation.PageQuestion"/>
+    <fullyQualifiedTypeName name="presentation.PresentationPackage"/>
 </qualifiedTypeNameHistroy>

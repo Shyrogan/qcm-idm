@@ -4,6 +4,7 @@
 <contributor name="org.eclipse.pde"/>
 <contributor name="org.eclipse.pde.ui"/>
 <contributor name="org.eclipse.platform"/>
+<contributor name="org.eclipse.acceleo.ide.ui"/>
 <contributor name="org.eclipse.ui.intro"/>
 <contributor name="org.eclipse.mylyn.help.ui"/>
 <contributor name="org.eclipse.egit.doc"/>
